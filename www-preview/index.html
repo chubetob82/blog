@@ -67,6 +67,17 @@ section{padding:48px 0 12px}
 section+section{border-top:1px solid var(--rule)}
 .sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:24px}
 
+.about{display:grid;grid-template-columns:minmax(0,58ch) minmax(0,1fr);gap:32px;align-items:start}
+@media (max-width:900px){.about{grid-template-columns:minmax(0,1fr)}}
+.about p{color:var(--ink-2);max-width:58ch}
+.about blockquote{font-family:var(--font-display);font-size:clamp(1.25rem,2vw,1.55rem);line-height:1.3;font-weight:500;color:var(--ink);margin:6px 0 0;padding:6px 0 10px 18px;border-left:4px solid var(--official);text-wrap:balance}
+.about blockquote cite{display:block;font-family:var(--font-mono);font-size:.72rem;font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+@media (max-width:900px){.about blockquote{margin-top:26px}}
+.about b{color:var(--ink);font-weight:600}
+.about .lede{display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;align-items:start;margin-bottom:18px}
+@media (max-width:480px){.about .lede{grid-template-columns:88px minmax(0,1fr);gap:16px}}
+.about .lede img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:1px solid var(--rule);filter:saturate(.9)}
+.about .lede p{font-family:var(--font-display);font-size:1.2rem;color:var(--ink);line-height:1.4;margin:0}
 .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
 @media (max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.cards{grid-template-columns:1fr}}
@@ -136,7 +147,7 @@ footer{border-top:1px solid var(--rule);margin-top:44px;padding:34px 0 64px}
   <div>
     <div class="eyebrow">Education · Technology · Entrepreneurship</div>
     <h1>Jesús Bolívar</h1>
-    <p class="dek">I build and invest in education. Fifteen years of enterprise software and strategy before it — McKinsey, two acquired startups, the World Bank — now pointed at one question: how do you make good schooling cheaper to deliver and easier to pay for?</p>
+    <p class="dek">I build and invest in education — schools, and the financial plumbing that keeps them open.</p>
     <div class="cta">
       <a class="primary" href="mailto:chubeto@alum.mit.edu">Write to me</a>
       <a href="https://www.linkedin.com/in/bolivarj/">LinkedIn</a>
@@ -148,6 +159,23 @@ footer{border-top:1px solid var(--rule);margin-top:44px;padding:34px 0 64px}
     <figcaption>Instituto Educacional Juan XXIII, second grade, 1990. I advise its board today.</figcaption>
   </figure></div>
 </header>
+
+<section id="about">
+  <div class="sec-head"><span class="eyebrow">About</span><h2>My story</h2></div>
+  <div class="about">
+    <div>
+      <div class="lede">
+        <img src="/portrait.jpg" width="640" height="640" loading="lazy" decoding="async" alt="Jesús Bolívar">
+        <p>I spent fifteen years in software — McKinsey, product at two startups that got acquired — and then I went into schools and didn't come back.</p>
+      </div>
+      <p>My partner Karen and I built <b>Open Minds Early School</b> in Oakland: zero to eighty kids, no investors, learning most of it as we went.</p>
+      <p>Running a school teaches you where it breaks. The hard part isn't teaching, it's getting paid — and in Venezuela that's brutal. Families want to pay and the money can't get through. So I built <b>UnoPago</b>, the financial operating system for schools there: payments, billing and reconciliation in one place.</p>
+      <p>Before all this: aerospace engineering at MIT, economics at the Kennedy School. I still advise <b>Instituto Educacional Juan XXIII</b> in Venezuela — my old school — through some genuinely bad financial years.</p>
+      <p>Plenty of failures, a few things that worked, still learning from the people around me.</p>
+    </div>
+    <blockquote>A school that can collect is a school that can plan.<cite>Why UnoPago exists</cite></blockquote>
+  </div>
+</section>
 
 <section>
   <div class="sec-head"><span class="eyebrow">Now</span><h2>What I am building</h2></div>
@@ -194,7 +222,7 @@ footer{border-top:1px solid var(--rule);margin-top:44px;padding:34px 0 64px}
       <p>Built enterprise software for SaaS diagnostics. Advised growth-stage startups, venture funds and private equity.</p></div></div>
     <div class="tl"><div class="yr">2015 – 2017</div><div>
       <b>Nomis Solutions</b> · <span class="role">Senior product manager, acquired</span><span class="loc">San Bruno, California</span>
-      <p>Led the team behind a SaaS platform for financial big data, customer behaviour and pricing. Cut client time-to-value by 40% and rebuilt the release process.</p></div></div>
+      <p>Led the team behind a SaaS platform for financial big data, customer behavior and pricing. Cut client time-to-value by 40% and rebuilt the release process.</p></div></div>
     <div class="tl"><div class="yr">2013 – 2015</div><div>
       <b>Corrigo</b> · <span class="role">Senior product manager, acquired</span><span class="loc">San Mateo, California</span>
       <p>Led the cross-functional team that built Corrigo's work-order automation platform.</p></div></div>

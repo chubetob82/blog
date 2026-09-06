@@ -123,11 +123,10 @@ section+section{border-top:1px solid var(--rule)}
 .about{display:grid;grid-template-columns:minmax(0,58ch) minmax(0,1fr);gap:32px;align-items:start}
 @media (max-width:900px){.about{grid-template-columns:minmax(0,1fr)}}
 .about .prose p{color:var(--ink-2)}
-.about .prose p:first-child{font-family:var(--font-display);font-size:1.2rem;color:var(--ink);line-height:1.4}
+.about .lede p{font-family:var(--font-display);font-size:1.2rem;color:var(--ink);line-height:1.4;margin:0}
 .about .lede{display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;align-items:start;margin-bottom:18px}
 @media (max-width:480px){.about .lede{grid-template-columns:88px minmax(0,1fr);gap:16px}}
 .about .lede img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:1px solid var(--rule);filter:saturate(.9)}
-.about .lede p{margin:0}
 .interests{margin-top:26px;padding-top:18px;border-top:1px solid var(--rule)}
 .interests .eyebrow{display:block;margin-bottom:10px}
 .interests ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
@@ -216,12 +215,12 @@ footer{border-top:1px solid var(--rule);margin-top:44px;padding:34px 0 64px}
     <div class="prose">
       <div class="lede">
         <img src="/portrait.jpg" width="640" height="640" loading="lazy" decoding="async" alt="Jesús Bolívar">
-        <p data-i18n="a.p1">I build and invest in education, and I write about the economics that decides how much of it a country can afford.</p>
+        <p data-i18n="a.p1">I spent fifteen years in software — McKinsey, product at two startups that got acquired — and then I went into schools and didn't come back.</p>
       </div>
-      <p data-i18n="a.p2">The centre of it is <b>Open Minds Early School</b>, a Spanish-immersion school in the Montclair district of Oakland that my partner Karen and I bootstrapped from zero to eighty children. Underneath it sits <b>UnoPago</b>, the fintech I founded to take the friction out of school payments in Venezuela — because a school that cannot collect cannot grow.</p>
-      <p data-i18n="a.p3">Before that, fifteen years of enterprise software and strategy: McKinsey in San Francisco, product at Nomis and Corrigo, the World Bank in Kenya, and a toll-collection company I started in Venezuela before I turned thirty.</p>
-      <p data-i18n="a.p4">I studied aerospace and mechanical engineering at MIT and development economics at the Harvard Kennedy School, and taught macroeconomics at Harvard College. Out of office, I run ultras.</p>
-      <p data-i18n="a.p5">The full CV lives at <a href="https://www.bolivarjesus.com/">bolivarjesus.com</a>.</p>
+      <p data-i18n="a.p2">My partner Karen and I built <b>Open Minds Early School</b> in Oakland: zero to eighty kids, no investors, learning most of it as we went.</p>
+      <p data-i18n="a.p3">Running a school teaches you where it breaks. The hard part isn't teaching, it's getting paid — and in Venezuela that's brutal. Families want to pay and the money can't get through. So I built <b>UnoPago</b>, the financial operating system for schools there: payments, billing and reconciliation in one place. A school that can collect is a school that can plan.</p>
+      <p data-i18n="a.p4">Before all this: aerospace engineering at MIT, economics at the Kennedy School. I still advise <b>Instituto Educacional Juan XXIII</b> in Venezuela — my old school — through some genuinely bad financial years.</p>
+      <p data-i18n="a.p5">Plenty of failures, a few things that worked, still learning from the people around me. Full CV at <a href="https://www.bolivarjesus.com/">bolivarjesus.com</a>.</p>
       <div class="interests">
         <span class="eyebrow" data-i18n="a.oo">Out of office</span>
         <ul>
@@ -298,11 +297,11 @@ const ES = {
 "k3.v":"Modelo vivo","k3":"Mueva los supuestos y las proyecciones se redibujan en el navegador",
 "k4":"Escrito y publicado en ambos idiomas",
 "a.eye":"Sobre mí","a.h":"Quién escribe",
-"a.p1":"Construyo e invierto en educación, y escribo sobre la economía que determina cuánta educación puede costear un país.",
-"a.p2":"El centro es <b>Open Minds Early School</b>, un colegio de inmersión en español en el distrito de Montclair, Oakland, que mi compañera Karen y yo levantamos de cero a ochenta niños. Debajo está <b>UnoPago</b>, la fintech que fundé para quitarle fricción a los pagos escolares en Venezuela: un colegio que no puede cobrar no puede crecer.",
-"a.p3":"Antes, quince años de software empresarial y estrategia: McKinsey en San Francisco, producto en Nomis y en Corrigo, el Banco Mundial en Kenia, y una empresa de peaje automatizado que fundé en Venezuela antes de los treinta.",
-"a.p4":"Estudié ingeniería aeroespacial y mecánica en el MIT y economía del desarrollo en la Harvard Kennedy School, y di clases de macroeconomía en Harvard College. Fuera de la oficina, corro ultramaratones.",
-"a.p5":"El currículum completo vive en <a href=\"https://www.bolivarjesus.com/\">bolivarjesus.com</a>.",
+"a.p1":"Pasé quince años en software — McKinsey, producto en dos startups que terminaron vendidas — y después me metí en colegios y no volví.",
+"a.p2":"Con mi compañera Karen levantamos <b>Open Minds Early School</b> en Oakland: de cero a ochenta niños, sin inversionistas, aprendiendo casi todo sobre la marcha.",
+"a.p3":"Dirigir un colegio te enseña dónde se rompe. Lo difícil no es enseñar, es cobrar; y en Venezuela eso es brutal. Las familias quieren pagar y el dinero no llega. Por eso construí <b>UnoPago</b>, el sistema operativo financiero de los colegios allá: pagos, facturación y conciliación en un solo lugar. Un colegio que cobra es un colegio que puede planificar.",
+"a.p4":"Antes de todo esto: ingeniería aeroespacial en el MIT, economía en la Kennedy School. Sigo asesorando al <b>Instituto Educacional Juan XXIII</b> en Venezuela — mi colegio — en unos años financieros de verdad malos.",
+"a.p5":"Muchos fracasos, algunas cosas que funcionaron, y sigo aprendiendo de la gente que me rodea. Currículum completo en <a href=\"https://www.bolivarjesus.com/\">bolivarjesus.com</a>.",
 "a.oo":"Fuera de la oficina",
 "oo1":"Ultramaratón","oo2":"Deportes de nieve","oo3":"Montañismo","oo4":"Fotografía con dron","oo5":"Volar","oo6":"Pódcast","oo7":"Video y sonido",
 "r.now":"Ahora","r.before":"Antes","r.trained":"Formación",
