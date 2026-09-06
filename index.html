@@ -140,6 +140,8 @@ section+section{border-top:1px solid var(--rule)}
 .rail .row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:baseline;padding-bottom:11px;border-bottom:1px solid var(--rule)}
 .rail dl > .row:last-child{border-bottom:0;padding-bottom:0}
 .rail .row b{font-weight:600;font-size:.92rem;color:var(--ink)}
+.rail .row b a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+.rail .row b a:hover,.rail .row b a:focus-visible{border-bottom-color:var(--parallel);color:var(--parallel)}
 .rail .row .yr{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);white-space:nowrap}
 .rail .row .d{grid-column:1/-1;font-size:.82rem;color:var(--muted);line-height:1.4}
 
@@ -232,10 +234,10 @@ footer{border-top:1px solid var(--rule);margin-top:44px;padding:34px 0 64px}
     <aside class="rail">
       <h4 data-i18n="r.now">Now</h4>
       <dl>
-        <div class="row"><b>Open Minds Early School</b><span class="yr">2024 →</span><span class="d" data-i18n="r.n1">Co-founder and CEO · Oakland, California</span></div>
-        <div class="row"><b>UnoPago</b><span class="yr">2023 →</span><span class="d" data-i18n="r.n2">Founder · school payments and billing · Valencia, Venezuela</span></div>
-        <div class="row"><b>Somos Cuadro</b><span class="yr">2026 →</span><span class="d" data-i18n="r.n4">Board member · growth strategy, digital innovation, governance</span></div>
-        <div class="row"><b>Instituto Educacional Juan XXIII</b><span class="yr">2016 →</span><span class="d" data-i18n="r.n3">Board advisor · Valencia, Venezuela</span></div>
+        <div class="row"><b><a href="https://www.unopago.com" target="_blank" rel="noopener">UnoPago</a></b><span class="yr">2023 →</span><span class="d" data-i18n="r.n2">Founder · school payments and billing · Valencia, Venezuela</span></div>
+        <div class="row"><b><a href="https://www.openmindsearlyschool.org" target="_blank" rel="noopener">Open Minds Early School</a></b><span class="yr">2024 →</span><span class="d" data-i18n="r.n1">Co-founder and CEO · Oakland, California</span></div>
+        <div class="row"><b><a href="https://somoscuadro.com/" target="_blank" rel="noopener">Somos Cuadro</a></b><span class="yr">2026 →</span><span class="d" data-i18n="r.n4">Board member · growth strategy, digital innovation, governance</span></div>
+        <div class="row"><b><a href="https://portal.juanxxiii.edu.ve/" target="_blank" rel="noopener">Instituto Educacional Juan XXIII</a></b><span class="yr">2016 →</span><span class="d" data-i18n="r.n3">Board advisor · Valencia, Venezuela</span></div>
       </dl>
       <h4 data-i18n="r.before">Before</h4>
       <dl>
