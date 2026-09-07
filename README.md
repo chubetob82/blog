@@ -12,7 +12,7 @@ committed.
 | `KangarooPegRevisited2026/` | The Kangaroo Peg, 2026 (English) |
 | `KangarooPegRevisited2026/es/` | La paridad canguro, 2026 (Spanish) |
 | `404.html` | Not-found page |
-| `www-preview/` | **Prototype, not the live site.** What `www.bolivarjesus.com` (currently Wix) could look like as static HTML in this design system. Marked `noindex` and linked from nowhere. See `MIGRATION.md`. |
+| `www-preview/` | **Prototype, not the live site.** The intended replacement for `www.bolivarjesus.com`, currently on Wix — migration is decided, see `MIGRATION.md`. Marked `noindex` and linked from nowhere until it ships. |
 | `feed.xml`, `sitemap.xml`, `robots.txt`, `og.png` | Feed, SEO, and the site-level social card |
 
 ## Design system

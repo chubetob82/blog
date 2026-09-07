@@ -1,8 +1,9 @@
-# Moving www.bolivarjesus.com off Wix — what it would take
+# Moving www.bolivarjesus.com off Wix
 
-Working notes, not a decision. `www-preview/index.html` in this branch is the evidence: the
+**Decided: migrate.** Bookings and Invoices turned out to be dormant, which was the only thing
+that could have stopped this. `www-preview/index.html` in this branch is the destination — the
 whole of the current Wix homepage, rebuilt as one hand-written HTML file in the blog's design
-system. Open it next to the live site and judge.
+system. What follows is the sequence to get there.
 
 ## What is on Wix today
 
@@ -17,18 +18,23 @@ From the Wix account and the live page:
 
 Everything visible on the homepage is static text and images. Nothing on it needs a server.
 
-## The one question that decides it
+## The question that decided it — settled
 
-**Are Wix Bookings and Wix Invoices actually in use?**
+**Are Wix Bookings and Wix Invoices actually in use?** They are not. Both were installed and
+never used.
 
-- If they are dormant (installed once, never used): the site is pure content, and everything
-  Wix is doing for it, GitHub Pages does for free. Migrate.
-- If real people book time or receive invoices through them: those are applications, not pages.
-  Static HTML cannot replace them, and replacing them separately (Cal.com, Stripe Invoicing,
-  a bookkeeping tool) is a bigger project than moving a homepage. Keep Wix, or migrate the
-  homepage and move those two workflows to purpose-built tools first.
+That was the only real blocker. They are applications, not pages: static HTML cannot replace a
+booking calendar or an invoicing ledger, and moving those workflows to purpose-built tools
+would have been a bigger project than moving a homepage. Dormant, they cost nothing to leave
+behind.
 
-Nothing else on the site is a blocker.
+Everything else on the site is static text and images. Nothing on it needs a server, so
+everything Wix is doing for this domain, GitHub Pages does for free.
+
+One thing to confirm before you cancel rather than before you start: that neither app holds
+records worth keeping — a stray test booking, an invoice someone actually received. Cancelling
+takes the data with it. I can check both through the Wix connector if you want it done
+properly.
 
 ## What changes if you migrate
 
@@ -41,7 +47,7 @@ Nothing else on the site is a blocker.
 | Design | Wix theme | The same system as the essays — one identity across both domains |
 | Bookings / invoices | Built in | Not available; needs separate tools |
 
-## Mechanics
+## Mechanics, in detail
 
 1. **A second repository.** A GitHub Pages site can carry only one custom domain in its `CNAME`
    file, and this one is spoken for by `blog.bolivarjesus.com`. So `www` needs its own repo,
@@ -70,11 +76,21 @@ Nothing else on the site is a blocker.
 - Whatever lives behind the "More" nav item on the current site — I could only read the homepage.
 - A decision on the contact form (`mailto:` may be enough).
 
-## Recommendation
+## The sequence
 
-If Bookings and Invoices are dormant: migrate. The content is small, static, and already
-rebuilt; the two domains would finally look like one person's work; and the maintenance loop
+Ordered so that nothing is live and broken at any point, and `blog.bolivarjesus.com` is never
+touched:
+
+1. **Finish the preview** — the list above. The Spanish version is the one that takes real work;
+   the rest is an afternoon.
+2. **New repository**, `CNAME` = `www.bolivarjesus.com`, the preview as its `index.html`.
+   Publish it on the `github.io` URL first and live with it for a few days.
+3. **Pull the remaining assets off `static.wixstatic.com`** — every image on every page, not just
+   the homepage — and commit them.
+4. **Inventory the Wix URLs**, including whatever sits behind "More", and give each one a
+   destination or a redirect.
+5. **Cut DNS**: `www` to the new Pages site, apex to the GitHub A records. Watch it for a week.
+6. **Park Wix for a month**, then cancel. Check Bookings and Invoices for records before you do.
+
+The two domains end up looking like one person's work, and the maintenance loop for `www`
 becomes the one you are already using for the essays.
-
-If either is live: leave `www` on Wix for now, and revisit once those workflows have moved to
-tools built for them.
