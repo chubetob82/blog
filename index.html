@@ -1,9 +1,424 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>blog.bolivarjesus.com</title><meta name="description" content="Essays and data pieces by Jesús Bolívar."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%98%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500&display=swap">
-<style>:root{color-scheme:light dark;--ground:#F5F4EF;--ink:#16232E;--muted:#6B7480;--rule:#D9D7CF;--acc:#1F5FAE}@media(prefers-color-scheme:dark){:root{--ground:#111A22;--ink:#EEF1F4;--muted:#8E99A4;--rule:#2B3743;--acc:#5893DC}}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.55}.w{max-width:680px;margin:0 auto;padding:72px 24px}h1{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:2.2rem;margin:0 0 6px}
-.sub{color:var(--muted);margin:0 0 40px}article{border-top:1px solid var(--rule);padding:22px 0}h2{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:1.5rem;margin:0 0 6px}p{margin:.4em 0}a{color:var(--acc)}h1 a{color:inherit;text-decoration:none;border-bottom:3px solid var(--acc)}.langs a{margin-right:18px;font-weight:500}</style></head>
-<body><div class="w"><h1><a href="https://bolivarjesus.com">Jesús Bolívar</a></h1><p class="sub">Essays and data pieces · Ensayos y análisis de datos</p>
-<article><h2><a href="/KangarooPegRevisited2026/">A Currency Is Imported. A State Is Built.</a></h2><p>The Kangaroo Peg, thirteen years on: Venezuela's exchange-rate regime from 2003 to 2026 and the path out of it. An update of Bettocchi &amp; Bolívar (2013), with the data, the model and a five-stage policy path.</p>
-<p class="langs"><a href="/KangarooPegRevisited2026/">Read in English →</a><a href="/KangarooPegRevisited2026/es/">Leer en español →</a></p></article></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jesús Bolívar</title>
+<meta name="description" content="I build and invest in education: schools, and the financial plumbing that keeps them open. UnoPago, Open Minds Early School, Instituto Educacional Juan XXIII.">
+<meta name="author" content="Jesús Bolívar">
+<link rel="canonical" href="https://blog.bolivarjesus.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jesús Bolívar">
+<meta property="og:description" content="I build and invest in education: schools, and the financial plumbing that keeps them open. UnoPago, Open Minds Early School, Instituto Educacional Juan XXIII.">
+<meta property="og:url" content="https://blog.bolivarjesus.com/">
+<meta property="og:image" content="https://blog.bolivarjesus.com/assets/og-cv.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Jesús Bolívar">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jesús Bolívar">
+<meta name="twitter:description" content="I build and invest in education: schools, and the financial plumbing that keeps them open. UnoPago, Open Minds Early School, Instituto Educacional Juan XXIII.">
+<meta name="twitter:image" content="https://blog.bolivarjesus.com/assets/og-cv.jpg">
+<meta name="theme-color" content="#F5F4EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111A22" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/favicon.png" sizes="180x180">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Jesús Bolívar" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person",
+"name":"Jesús Bolívar","url":"https://blog.bolivarjesus.com/","image":"https://blog.bolivarjesus.com/assets/og-cv.jpg",
+"sameAs":["https://www.linkedin.com/in/bolivarj/","https://twitter.com/chubetob"]}</script>
+<style>
+/* The site's colour and type tokens, in one place.
+ *
+ * These are the article's values, which are the superset: the CV and the blog index each
+ * carried their own copy, and the copies had already drifted (a --band alpha of .06 against
+ * the article's .05, and three font stacks with their fallbacks trimmed off). Sharing them is
+ * what stops that happening again.
+ *
+ * The article template still declares its own, including the chart-only tokens that belong to
+ * it alone (--bad, --ok, --warn, --grid, --window, --redenom, --chip-target). Moving it onto
+ * this file is a separate step, checked against the published bytes.
+ */
+:root{
+  --ground:#F5F4EF; --panel:#FFFFFF; --ink:#16232E; --ink-2:#3D4954; --muted:#6B7480; --rule:#D9D7CF;
+  --official:#C2761B; --parallel:#1F5FAE; --model:#8E44AD; --target:#2E8B57;
+  --chip-data:#E8EEF7; --chip-model:#F0E6F6; --band:rgba(22,35,46,.05);
+  --font-display:"Newsreader",Georgia,"Times New Roman",serif;
+  --font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#111A22; --panel:#18232D; --ink:#EEF1F4; --ink-2:#C6CDD4; --muted:#8E99A4; --rule:#2B3743;
+  --official:#CC7C30; --parallel:#5893DC; --model:#AC77D2; --target:#3EA66C;
+  --chip-data:#1F3350; --chip-model:#3A2A4A; --band:rgba(238,241,244,.05);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --ground:#111A22; --panel:#18232D; --ink:#EEF1F4; --ink-2:#C6CDD4; --muted:#8E99A4; --rule:#2B3743;
+  --official:#CC7C30; --parallel:#5893DC; --model:#AC77D2; --target:#3EA66C;
+  --chip-data:#1F3350; --chip-model:#3A2A4A; --band:rgba(238,241,244,.05);
+  color-scheme:dark;
+}
+/* Everything both pages agreed on: the reset, the type scale, the fixed controls, the section
+ * rhythm, the footer. Lifted from the two copies where they matched, which was most of it.
+ * Anything a single page needs stays in that page's own <style> block.
+ */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;margin:0;line-height:1.1;text-wrap:balance}
+h1{font-size:clamp(2.6rem,6vw,4.2rem);letter-spacing:-.015em}
+h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+h3{font-size:clamp(1.5rem,2.6vw,2rem)}
+h4{font-size:1.05rem}
+p{margin:.6em 0}
+a{color:var(--parallel)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--parallel);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* controls, bottom right, out of the way of the text column */
+.controls-bar{position:fixed;bottom:14px;right:14px;z-index:50;display:flex;gap:8px;background:var(--panel);padding:4px;border:1px solid var(--rule);border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.seg{display:inline-flex;border:0;border-radius:3px;overflow:hidden}
+.seg button{background:transparent;border:0;color:var(--ink-2);font:inherit;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;padding:4px 9px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+@media (max-width:600px){.controls-bar{bottom:10px;right:10px;box-shadow:0 2px 14px rgba(0,0,0,.18)}.seg button{padding:4px 7px}}
+
+/* sections */
+section{padding:52px 0 14px}
+section+section{border-top:1px solid var(--rule)}
+.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.sec-head h2{font-size:clamp(1.4rem,2.4vw,1.75rem)}
+.dek{font-family:var(--font-display);font-size:clamp(1.15rem,2.1vw,1.45rem);font-weight:400;color:var(--ink-2);max-width:56ch;line-height:1.35}
+.langs{display:flex;gap:20px;flex-wrap:wrap;margin-top:auto;padding-top:16px}
+.langs a{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid transparent}
+.langs a:hover,.langs a:focus-visible{border-bottom-color:currentColor}
+
+/* the portrait-and-opening-line pairing, on both pages */
+.lede{display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;align-items:start;margin-bottom:18px}
+@media (max-width:480px){.lede{grid-template-columns:88px minmax(0,1fr);gap:16px}}
+.lede img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:1px solid var(--rule);filter:saturate(.9)}
+.lede p{font-family:var(--font-display);font-size:1.2rem;color:var(--ink);line-height:1.4;margin:0}
+
+/* footer */
+footer{border-top:1px solid var(--rule);margin-top:44px;padding:34px 0 64px;scroll-margin-top:24px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;margin-bottom:28px}
+.contact .eyebrow{display:block;margin-bottom:8px}
+.contact a{display:block;font-size:.92rem;text-decoration:none;padding:2px 0}
+.contact a:hover,.contact a:focus-visible{text-decoration:underline}
+.colophon{font-size:.78rem;color:var(--muted);max-width:76ch;line-height:1.5}
+.colophon a{color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+<script>
+/* PostHog, cookieless: nothing stored in the browser, no session recordings, no autocapture. */
+/* PostHog's own loader stub, verbatim from their install snippet, with the braces undoubled
+   so it can live in a file instead of inside a Python f-string.
+
+   The article's shell in build.py still carries its own copy: that function is held byte for
+   byte against the published pages and must not be edited. When the article moves onto this
+   design layer, its copy goes and this one stays. */
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_ApMXfXStb2XKAhJDNYVAiuQ3naro7A3v7qjrFomdghaG',{api_host:'https://us.i.posthog.com', persistence:'memory', autocapture:false, disable_session_recording:true, capture_pageview:true, capture_pageleave:true, person_profiles:'never', disable_surveys:true});
+posthog.register({page:'cv'});
+</script>
+</head>
+<body>
+<style>
+h3{font-size:1.15rem}
+header.hero{padding:clamp(44px,7vw,80px) 0 40px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,52px);align-items:center}
+@media (max-width:820px){header.hero{grid-template-columns:minmax(0,1fr);gap:28px}header.hero .shot{order:-1}}
+.hero .eyebrow{margin-bottom:14px}
+.hero h1{margin-bottom:16px}
+.hero .dek{max-width:50ch;margin:0 0 24px}
+.hero .shot figure{margin:0}
+.hero .shot img{display:block;width:100%;height:auto;aspect-ratio:1100/723;object-fit:cover;border:1px solid var(--rule)}
+.hero .shot figcaption{font-family:var(--font-mono);font-size:.72rem;line-height:1.5;color:var(--muted);margin-top:10px;max-width:44ch}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.cta a{font-family:var(--font-mono);font-size:.8rem;letter-spacing:.04em;text-decoration:none;border:1px solid var(--rule);background:var(--panel);color:var(--ink);padding:8px 14px}
+.cta a:hover{border-color:var(--parallel);color:var(--parallel)}
+.cta a.primary{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.cta a.primary:hover{background:var(--parallel);border-color:var(--parallel);color:#fff}
+
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+@media (max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+.card{background:var(--panel);padding:20px;display:flex;flex-direction:column;gap:8px}
+.card .yr{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;color:var(--muted)}
+.card p{margin:0;font-size:.9rem;color:var(--ink-2)}
+.card .role{font-family:var(--font-mono);font-size:.74rem;color:var(--official)}
+.card .site{margin-top:auto;padding-top:10px;font-family:var(--font-mono);font-size:.74rem}
+.card .site a{text-decoration:none;border-bottom:1px solid transparent}
+.card .site a:hover,.card .site a:focus-visible{border-bottom-color:currentColor}
+.loc{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.02em;color:var(--muted)}
+
+.about{max-width:none}
+.about p{color:var(--ink-2);max-width:58ch}
+.about b{color:var(--ink);font-weight:600}
+
+.timeline{border-top:1px solid var(--rule)}
+.tl{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 24px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+@media (max-width:640px){.tl{grid-template-columns:1fr;gap:4px}}
+.tl .yr{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl b{font-size:1rem}
+.tl .role{color:var(--ink-2);font-size:.9rem}
+.tl .loc{font-size:.74rem;white-space:nowrap}
+.tl .loc::before{content:"·";margin:0 .45em;color:var(--rule)}
+.tl p{margin:4px 0 0;font-size:.88rem;color:var(--muted);max-width:72ch}
+
+.piece{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border:1px solid var(--rule);background:var(--panel)}
+@media (max-width:820px){.piece{grid-template-columns:1fr}}
+.piece .body{padding:24px;display:flex;flex-direction:column;gap:10px}
+.piece h3{font-size:1.5rem}
+.piece h3 a{color:var(--ink);text-decoration:none;background-image:linear-gradient(var(--parallel),var(--parallel));background-size:0 2px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .25s}
+.piece h3 a:hover,.piece h3 a:focus-visible{background-size:100% 2px}
+.piece p{margin:0;color:var(--ink-2);font-size:.95rem}
+.piece .langs{gap:18px;padding-top:8px}
+.piece .shot{border-left:1px solid var(--rule);background:var(--ground);padding:18px;display:flex;align-items:center}
+@media (max-width:820px){.piece .shot{border-left:0;border-top:1px solid var(--rule)}}
+.piece .shot img{display:block;width:100%;height:auto;border:1px solid var(--rule)}
+
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{font-family:var(--font-mono);font-size:.74rem;color:var(--ink-2);border:1px solid var(--rule);background:var(--panel);padding:5px 10px;border-radius:2px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px}
+@media (max-width:820px){.two{grid-template-columns:1fr;gap:26px}}
+.two h4{font-family:var(--font-body);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 12px}
+.awards{list-style:none;margin:0;padding:0;font-size:.92rem}
+.awards li{padding:7px 0;border-bottom:1px solid var(--rule);color:var(--ink-2);display:flex;justify-content:space-between;gap:16px}
+.awards li span{font-family:var(--font-mono);font-size:.74rem;color:var(--muted);white-space:nowrap}
+.oo-shot{margin:18px 0 0}
+.oo-shot img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--rule)}
+.oo-shot figcaption{font-family:var(--font-mono);font-size:.72rem;line-height:1.5;color:var(--muted);margin-top:8px}
+</style>
+
+<div class="controls-bar" role="toolbar" aria-label="Theme">
+  <div class="seg" role="group" aria-label="Theme"><button data-theme-pick="system" aria-pressed="true" title="System">◐</button><button data-theme-pick="light" aria-pressed="false" title="Light">☀</button><button data-theme-pick="dark" aria-pressed="false" title="Dark">☾</button></div>
+</div>
+
+<div class="wrap">
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Education · Technology · Entrepreneurship</div>
+    <h1>Jesús Bolívar</h1>
+    <p class="dek">I build and invest in education: schools, and the financial plumbing that keeps them open.</p>
+    <div class="cta">
+      <a class="primary" href="#contact">Contact</a>
+      <a href="https://www.linkedin.com/in/bolivarj/">LinkedIn</a>
+      <a href="/blog/">Read the blog</a>
+    </div>
+  </div>
+  <div class="shot"><figure>
+    <img src="/assets/hero-1990.jpg" width="1100" height="723" alt="A boy of seven at a school desk, pencil in hand over an open exercise book, in front of a wall-sized political map of Venezuela. A letterboard on the desk reads Instituto Educ. Juan XXIII, 2 grado sección C, año escolar 1990.">
+    <figcaption>Instituto Educacional Juan XXIII, second grade, 1990. I advise its board today.</figcaption>
+  </figure></div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Now</span><h2>What I am building</h2></div>
+  <div class="cards">
+    <div class="card">
+      <span class="yr">2023 →</span>
+      <h3>UnoPago</h3>
+      <span class="role">Founder</span>
+      <span class="loc">Valencia, Venezuela</span>
+      <p>Payments, billing and reconciliation for schools and subscription businesses, where financial friction caps growth. Product, go-to-market and operations across the US and Latin America.</p>
+      <span class="site"><a href="https://www.unopago.com" target="_blank" rel="noopener">unopago.com ↗</a></span>
+    </div>
+    <div class="card">
+      <span class="yr">2024 →</span>
+      <h3>Open Minds Early School</h3>
+      <span class="role">Co-founder and CEO</span>
+      <span class="loc">Oakland, California</span>
+      <p>A Spanish-immersion school in the Montclair district of Oakland, bootstrapped with my partner Karen from zero to eighty children. Hiring, financial strategy, licensing, parent engagement, growth.</p>
+      <span class="site"><a href="https://www.openmindsearlyschool.org" target="_blank" rel="noopener">openmindsearlyschool.org ↗</a></span>
+    </div>
+    <div class="card">
+      <span class="yr">2026 →</span>
+      <h3>Somos Cuadro</h3>
+      <span class="role">Board member</span>
+      <p>Supporting Somos Cuadro's growth strategy, digital innovation, governance, and capital readiness.</p>
+      <span class="site"><a href="https://somoscuadro.com/" target="_blank" rel="noopener">somoscuadro.com ↗</a></span>
+    </div>
+    <div class="card">
+      <span class="yr">2016 →</span>
+      <h3>Instituto Educacional Juan XXIII</h3>
+      <span class="role">Board advisor</span>
+      <span class="loc">Valencia, Venezuela</span>
+      <p>Guiding a school through financial turmoil and technology investment toward something sustainable. Taught physics there in 2009.</p>
+      <span class="site"><a href="https://portal.juanxxiii.edu.ve/" target="_blank" rel="noopener">portal.juanxxiii.edu.ve ↗</a></span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="sec-head"><span class="eyebrow">About</span><h2>My story</h2></div>
+  <div class="about">
+    <div class="lede">
+      <img src="/assets/portrait.jpg" width="640" height="640" loading="lazy" decoding="async" alt="Jesús Bolívar">
+      <p>I spent fifteen years in software: McKinsey, then product at two startups that got acquired. After that I went into schools and did not come back.</p>
+    </div>
+    <p>My partner Karen and I built <b>Open Minds Early School</b> in Oakland: zero to eighty kids, no investors, learning most of it as we went.</p>
+    <p>Running a school teaches you where it breaks. Teaching is hard work; growing a school and keeping it solvent is harder. In Venezuela it is brutal: families want to pay and the money cannot get through. So we built <b>UnoPago</b>, the financial operating system for schools there: payments, billing and reconciliation in one place. A school that can collect is a school that can plan.</p>
+    <p>Before all this: aerospace engineering at MIT, economics at the Kennedy School. I still advise <b>Instituto Educacional Juan XXIII</b> in Venezuela, my old school, through some genuinely bad financial years.</p>
+    <p>Plenty of failures, a few things that worked, still learning from the people around me.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Track record</span><h2>Where I have worked</h2></div>
+  <div class="timeline">
+    <div class="tl"><div class="yr">2017 – 2024</div><div>
+      <b>McKinsey &amp; Company</b> · <span class="role">SaaS expert, solution leader</span><span class="loc">San Francisco, California</span>
+      <p>Built enterprise software for SaaS diagnostics. Advised growth-stage startups, venture funds and private equity.</p></div></div>
+    <div class="tl"><div class="yr">2015 – 2017</div><div>
+      <b>Nomis Solutions</b> · <span class="role">Senior product manager, acquired</span><span class="loc">San Bruno, California</span>
+      <p>Led the team behind a SaaS platform for financial big data, customer behavior and pricing. Cut client time-to-value by 40% and rebuilt the release process.</p></div></div>
+    <div class="tl"><div class="yr">2013 – 2015</div><div>
+      <b>Corrigo</b> · <span class="role">Senior product manager, acquired</span><span class="loc">San Mateo, California</span>
+      <p>Led the cross-functional team that built Corrigo's work-order automation platform.</p></div></div>
+    <div class="tl"><div class="yr">2013</div><div>
+      <b>Harvard University, Economics</b> · <span class="role">Teaching fellow</span><span class="loc">Cambridge, Massachusetts</span>
+      <p>Taught macroeconomics at Harvard College (Econ 1010b).</p></div></div>
+    <div class="tl"><div class="yr">2012</div><div>
+      <b>The World Bank</b> · <span class="role">Consultant</span><span class="loc">Nairobi, Kenya</span>
+      <p>Growth strategy for manufacturers in Kenya: technology infrastructure, capital structure, and the constraints of the business environment.</p></div></div>
+    <div class="tl"><div class="yr">2012</div><div>
+      <b>Office of the Crown Prince, Abu Dhabi</b> · <span class="role">Research intern</span><span class="loc">Abu Dhabi, UAE</span>
+      <p>Designed conditions for new and existing companies to grow inside the constraints of the UAE economy.</p></div></div>
+    <div class="tl"><div class="yr">2005 – 2010</div><div>
+      <b>SITI · Integrated Systems for Smart Transport</b> · <span class="role">Founder</span><span class="loc">Venezuela</span>
+      <p>Five engineers, and Venezuela's first automated toll-plaza collection system. Also delivered a wireless network for more than two hundred CCTV and police surveillance cameras in the State of Vargas.</p></div></div>
+    <div class="tl"><div class="yr">2018 – 2021</div><div>
+      <b>MIT Club of Northern California</b> · <span class="role">Co-chair, Future of Computing</span><span class="loc">San Francisco, California</span>
+      <p>Ran the 2019 AI conference for more than five hundred participants and speakers.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Writing</span><h2>What I publish</h2></div>
+  <div class="piece">
+    <div class="body">
+      <span class="eyebrow">Data + model · 6 September 2026</span>
+      <h3><a href="/KangarooPegRevisited2026/" data-piece="KangarooPegRevisited2026">A Currency Is Imported. A State Is Built.</a></h3>
+      <p>Venezuela's exchange-rate regime from 2003 to 2026 and the path out of it: where the bolívar stands, where the economy must be by 2031, and the policy sequence that gets it there without asking the state to do the investing. An update of Bettocchi & Bolívar (2013).</p>
+      <p class="langs"><a href="/KangarooPegRevisited2026/" data-piece="KangarooPegRevisited2026" data-piece-lang="en">Read in English →</a><a href="/KangarooPegRevisited2026/es/" data-piece="KangarooPegRevisited2026" data-piece-lang="es">Leer en español →</a></p>
+    </div>
+    <div class="shot"><img src="/KangarooPegRevisited2026/og.jpg" width="1200" height="630" loading="lazy" decoding="async" alt="Two illustrated buildings side by side, each on a stone base labelled STRONG INSTITUTIONS. The left one is a flimsy scaffolded frame stamped FRAGILE with a dollar bill laid over it as a roof; the right one is solid and finished under the same dollar roof. The headline reads: the currency is the second answer, not the first."></div>
+  </div>
+  <p style="color:var(--muted);font-size:.88rem;margin-top:16px">Also: articles at Caracas Chronicles, and the Venezuela Diaspora Project podcast.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Detail</span><h2>Training, skills, and the rest</h2></div>
+  <div class="two">
+    <div>
+      <h4>Education</h4>
+      <ul class="awards">
+        <li>Harvard Kennedy School · MPA / International Development <span>2011–13</span></li>
+        <li>MIT · BS Aerospace Engineering, BS Mechanical Engineering <span>1999–2004</span></li>
+        <li>Instituto Educacional Juan XXIII · IB Diploma <span>1987–99</span></li>
+      </ul>
+      <h4 style="margin-top:28px">Awards</h4>
+      <ul class="awards">
+        <li>Leaders of Manufacturing, MIT <span>2003</span></li>
+        <li>Mathematics Olympiad, Venezuela <span>1999</span></li>
+        <li>Chemistry Olympiad, Venezuela <span>1998, 1999</span></li>
+        <li>Physics Olympiad, Venezuela <span>1998, 1999</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4>What I bring</h4>
+      <ul class="tags">
+        <li>Financial analysis, seed → pre-IPO</li><li>Org scaling</li><li>Pricing and go-to-market</li>
+        <li>Data analysis / advanced stats</li><li>Private equity</li><li>Sales, marketing, growth</li>
+        <li>Enterprise software product</li><li>Python / R</li><li>Digital design</li><li>Audio and video editing</li>
+      </ul>
+      <h4 style="margin-top:28px">Languages</h4>
+      <ul class="tags"><li>Spanish · native</li><li>English · fluent</li></ul>
+      <h4 style="margin-top:28px">Out of office</h4>
+      <ul class="tags">
+        <li>Ultrarunning</li><li>Snow sports</li><li>Hiking</li><li>Drone photography</li>
+        <li>Flying drones and planes</li><li>Podcasting</li><li>Video and sound production</li>
+      </ul>
+      <figure class="oo-shot">
+        <img src="/assets/roraima.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Standing on the bare rock summit plateau of a tepui, walking pole in hand, with cloud spilling over the escarpment behind.">
+        <figcaption>On top of Roraima.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="contact">
+    <div><span class="eyebrow">Write to me</span>
+      <a href="mailto:chubeto@alum.mit.edu">chubeto@alum.mit.edu</a>
+      <a href="https://wa.me/16509449655" rel="me">WhatsApp</a></div>
+    <div><span class="eyebrow">Elsewhere</span>
+      <a href="https://www.linkedin.com/in/bolivarj/" rel="me">LinkedIn</a>
+      <a href="https://twitter.com/chubetob" rel="me">X · @chubetob</a></div>
+    <div><span class="eyebrow">Writing</span>
+      <a href="/blog/">The blog</a></div>
+  </div>
+  <p class="colophon">Set in Newsreader and IBM Plex. Static HTML on GitHub Pages, hand-built, no framework. Analytics are cookieless: page views and page leaves only, nothing stored in your browser, no session recording, no autocapture. © 2026 Jesús Bolívar.</p>
+</footer>
+
+</div>
+
+<script>
+/* Theme and language, shared by every page that is not the article.
+ *
+ * The article carries its own copy of this machinery inside its template, along with review
+ * mode. Both belong here; moving them is a later step, checked against the published bytes.
+ *
+ * A page supplies window.ES (its Spanish dictionary, keyed by data-i18n) before this runs.
+ * Leave it undefined and the language control simply does not appear.
+ */
+const store={get:k=>{try{return localStorage.getItem(k);}catch(e){return null;}},set:(k,v)=>{try{localStorage.setItem(k,v);}catch(e){}}};
+const track=(ev,props)=>{try{if(window.posthog&&posthog.capture)posthog.capture(ev,props||{});}catch(e){}};
+
+const ES = window.ES || null;
+const TR={'Language and theme':'Idioma y tema','Language':'Idioma','Theme':'Tema','System':'Sistema','Light':'Claro','Dark':'Oscuro'};
+const tr = x => (LANG==='es' && TR[x]!==undefined) ? TR[x] : x;
+
+const urlLang = new URLSearchParams(location.search).get('lang');
+let LANG = (['en','es'].includes(urlLang) && urlLang)
+        || (['en','es'].includes(store.get('kp.lang')) && store.get('kp.lang'))
+        || ((navigator.language||'').toLowerCase().startsWith('es') ? 'es' : 'en');
+if(!ES) LANG='en';
+const EN = {};   /* snapshot of the English markup, filled on the first pass */
+
+function applyLang(lang){
+  LANG=lang; store.set('kp.lang',lang); document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.dataset.i18n; if(!(k in EN)) EN[k]=el.innerHTML;
+    const v = lang==='es' ? (ES[k] ?? EN[k]) : EN[k];
+    if(el.innerHTML!==v) el.innerHTML=v;
+  });
+  document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed', b.dataset.lang===lang));
+  const bar=document.querySelector('.controls-bar');
+  if(bar){ bar.setAttribute('aria-label', tr(bar.querySelector('[data-lang]') ? 'Language and theme' : 'Theme'));
+           bar.querySelectorAll('[role="group"]').forEach(g=>g.setAttribute('aria-label', tr(g.querySelector('[data-lang]') ? 'Language' : 'Theme'))); }
+  document.querySelectorAll('[data-theme-pick]').forEach(b=>b.title=tr(b.dataset.themePick==='system'?'System':b.dataset.themePick==='light'?'Light':'Dark'));
+  /* an article is a separate page per language: send readers to the one they are reading in */
+  document.querySelectorAll('[data-piece-lang]').forEach(a=>a.setAttribute('hreflang', a.dataset.pieceLang));
+}
+function applyTheme(pick){
+  store.set('kp.theme',pick);
+  if(pick==='system') delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme=pick;
+  document.querySelectorAll('[data-theme-pick]').forEach(b=>b.setAttribute('aria-pressed', b.dataset.themePick===pick));
+}
+
+if(ES) applyLang(LANG);
+applyTheme(['light','dark','system'].includes(store.get('kp.theme')) ? store.get('kp.theme') : 'system');
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{ if(b.dataset.lang===LANG) return; track('language_switch',{to:b.dataset.lang,from:LANG}); applyLang(b.dataset.lang); }));
+document.querySelectorAll('[data-theme-pick]').forEach(b=>b.addEventListener('click',()=>{ track('theme_switch',{to:b.dataset.themePick}); applyTheme(b.dataset.themePick); }));
+document.querySelectorAll('a[data-piece]').forEach(a=>a.addEventListener('click',()=>track('piece_open',{piece:a.dataset.piece, lang:a.dataset.pieceLang||'en', from_lang:LANG})));
+</script>
+</body>
+</html>

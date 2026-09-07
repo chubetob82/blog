@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jesús Bolívar</title>
+    <link>https://blog.bolivarjesus.com/blog/</link>
+    <atom:link href="https://blog.bolivarjesus.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Essays and data pieces on Venezuela's macroeconomy, education, and the plumbing that connects the two.</description>
+    <language>en</language>
+    <item>
+      <title>The Kangaroo Peg, 2026</title>
+      <link>https://blog.bolivarjesus.com/KangarooPegRevisited2026/</link>
+      <guid isPermaLink="true">https://blog.bolivarjesus.com/KangarooPegRevisited2026/</guid>
+      <description>Venezuela's exchange-rate regime from 2003 to 2026 and the path out of it: where the bolívar stands, where the economy must be by 2031, and the policy sequence that gets it there without asking the state to do the investing. An update of Bettocchi &amp; Bolívar (2013).</description>
+      <pubDate>Sun, 06 Sep 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>La paridad canguro (Kangaroo Peg), 2026</title>
+      <link>https://blog.bolivarjesus.com/KangarooPegRevisited2026/es/</link>
+      <guid isPermaLink="true">https://blog.bolivarjesus.com/KangarooPegRevisited2026/es/</guid>
+      <description>El régimen cambiario venezolano de 2003 a 2026 y la salida: dónde está el bolívar, dónde tiene que estar la economía en 2031 y la secuencia de políticas que la lleva allí sin pedirle al Estado que sea el inversionista. Actualización de Bettocchi &amp; Bolívar (2013).</description>
+      <pubDate>Sun, 06 Sep 2026 12:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

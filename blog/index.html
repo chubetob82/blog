@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing · Jesús Bolívar</title>
+<meta name="description" content="Long pieces on Venezuela's macroeconomy, on education, and on the plumbing that connects the two. Every chart names its source; every model ships its assumptions.">
+<meta name="author" content="Jesús Bolívar">
+<link rel="canonical" href="https://blog.bolivarjesus.com/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jesús Bolívar · Essays and data pieces">
+<meta property="og:description" content="Long pieces on Venezuela's macroeconomy, on education, and on the plumbing that connects the two. Every chart names its source; every model ships its assumptions.">
+<meta property="og:url" content="https://blog.bolivarjesus.com/blog/">
+<meta property="og:image" content="https://blog.bolivarjesus.com/assets/og-blog.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Jesús Bolívar">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jesús Bolívar · Essays and data pieces">
+<meta name="twitter:description" content="Long pieces on Venezuela's macroeconomy, on education, and on the plumbing that connects the two. Every chart names its source; every model ships its assumptions.">
+<meta name="twitter:image" content="https://blog.bolivarjesus.com/assets/og-blog.png">
+<meta name="theme-color" content="#F5F4EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111A22" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/favicon.png" sizes="180x180">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Jesús Bolívar" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog",
+"name":"Jesús Bolívar","url":"https://blog.bolivarjesus.com/blog/","image":"https://blog.bolivarjesus.com/assets/og-blog.png",
+"sameAs":["https://www.linkedin.com/in/bolivarj/","https://twitter.com/chubetob"]}</script>
+<style>
+/* The site's colour and type tokens, in one place.
+ *
+ * These are the article's values, which are the superset: the CV and the blog index each
+ * carried their own copy, and the copies had already drifted (a --band alpha of .06 against
+ * the article's .05, and three font stacks with their fallbacks trimmed off). Sharing them is
+ * what stops that happening again.
+ *
+ * The article template still declares its own, including the chart-only tokens that belong to
+ * it alone (--bad, --ok, --warn, --grid, --window, --redenom, --chip-target). Moving it onto
+ * this file is a separate step, checked against the published bytes.
+ */
+:root{
+  --ground:#F5F4EF; --panel:#FFFFFF; --ink:#16232E; --ink-2:#3D4954; --muted:#6B7480; --rule:#D9D7CF;
+  --official:#C2761B; --parallel:#1F5FAE; --model:#8E44AD; --target:#2E8B57;
+  --chip-data:#E8EEF7; --chip-model:#F0E6F6; --band:rgba(22,35,46,.05);
+  --font-display:"Newsreader",Georgia,"Times New Roman",serif;
+  --font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#111A22; --panel:#18232D; --ink:#EEF1F4; --ink-2:#C6CDD4; --muted:#8E99A4; --rule:#2B3743;
+  --official:#CC7C30; --parallel:#5893DC; --model:#AC77D2; --target:#3EA66C;
+  --chip-data:#1F3350; --chip-model:#3A2A4A; --band:rgba(238,241,244,.05);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --ground:#111A22; --panel:#18232D; --ink:#EEF1F4; --ink-2:#C6CDD4; --muted:#8E99A4; --rule:#2B3743;
+  --official:#CC7C30; --parallel:#5893DC; --model:#AC77D2; --target:#3EA66C;
+  --chip-data:#1F3350; --chip-model:#3A2A4A; --band:rgba(238,241,244,.05);
+  color-scheme:dark;
+}
+/* Everything both pages agreed on: the reset, the type scale, the fixed controls, the section
+ * rhythm, the footer. Lifted from the two copies where they matched, which was most of it.
+ * Anything a single page needs stays in that page's own <style> block.
+ */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;margin:0;line-height:1.1;text-wrap:balance}
+h1{font-size:clamp(2.6rem,6vw,4.2rem);letter-spacing:-.015em}
+h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+h3{font-size:clamp(1.5rem,2.6vw,2rem)}
+h4{font-size:1.05rem}
+p{margin:.6em 0}
+a{color:var(--parallel)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--parallel);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* controls, bottom right, out of the way of the text column */
+.controls-bar{position:fixed;bottom:14px;right:14px;z-index:50;display:flex;gap:8px;background:var(--panel);padding:4px;border:1px solid var(--rule);border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.seg{display:inline-flex;border:0;border-radius:3px;overflow:hidden}
+.seg button{background:transparent;border:0;color:var(--ink-2);font:inherit;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;padding:4px 9px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+@media (max-width:600px){.controls-bar{bottom:10px;right:10px;box-shadow:0 2px 14px rgba(0,0,0,.18)}.seg button{padding:4px 7px}}
+
+/* sections */
+section{padding:52px 0 14px}
+section+section{border-top:1px solid var(--rule)}
+.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.sec-head h2{font-size:clamp(1.4rem,2.4vw,1.75rem)}
+.dek{font-family:var(--font-display);font-size:clamp(1.15rem,2.1vw,1.45rem);font-weight:400;color:var(--ink-2);max-width:56ch;line-height:1.35}
+.langs{display:flex;gap:20px;flex-wrap:wrap;margin-top:auto;padding-top:16px}
+.langs a{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid transparent}
+.langs a:hover,.langs a:focus-visible{border-bottom-color:currentColor}
+
+/* the portrait-and-opening-line pairing, on both pages */
+.lede{display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;align-items:start;margin-bottom:18px}
+@media (max-width:480px){.lede{grid-template-columns:88px minmax(0,1fr);gap:16px}}
+.lede img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:1px solid var(--rule);filter:saturate(.9)}
+.lede p{font-family:var(--font-display);font-size:1.2rem;color:var(--ink);line-height:1.4;margin:0}
+
+/* footer */
+footer{border-top:1px solid var(--rule);margin-top:44px;padding:34px 0 64px;scroll-margin-top:24px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;margin-bottom:28px}
+.contact .eyebrow{display:block;margin-bottom:8px}
+.contact a{display:block;font-size:.92rem;text-decoration:none;padding:2px 0}
+.contact a:hover,.contact a:focus-visible{text-decoration:underline}
+.colophon{font-size:.78rem;color:var(--muted);max-width:76ch;line-height:1.5}
+.colophon a{color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+<script>
+/* PostHog, cookieless: nothing stored in the browser, no session recordings, no autocapture. */
+/* PostHog's own loader stub, verbatim from their install snippet, with the braces undoubled
+   so it can live in a file instead of inside a Python f-string.
+
+   The article's shell in build.py still carries its own copy: that function is held byte for
+   byte against the published pages and must not be edited. When the article moves onto this
+   design layer, its copy goes and this one stays. */
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_ApMXfXStb2XKAhJDNYVAiuQ3naro7A3v7qjrFomdghaG',{api_host:'https://us.i.posthog.com', persistence:'memory', autocapture:false, disable_session_recording:true, capture_pageview:true, capture_pageleave:true, person_profiles:'never', disable_surveys:true});
+posthog.register({page:'blog-index'});
+</script>
+</head>
+<body>
+<style>
+/* the blog index. Shared rules live in design/base.css; these are this page's own. */
+header.masthead{padding:clamp(48px,9vw,92px) 0 34px;border-bottom:1px solid var(--rule)}
+.masthead .eyebrow{margin-bottom:14px}
+.masthead h1{margin-bottom:18px}
+.topics{display:flex;flex-wrap:wrap;gap:0 10px;margin-top:26px;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.topics span::after{content:"·";margin-left:10px;color:var(--rule)}
+.topics span:last-child::after{content:""}
+
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--rule);background:var(--panel)}
+@media (max-width:900px){.feature{grid-template-columns:minmax(0,1fr)}}
+.feature .body{padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:10px}
+.feature .meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+.chip{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;color:var(--ink);background:var(--chip-data)}
+.chip.model{background:var(--chip-model)}
+.feature .date{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;color:var(--muted)}
+.feature h3 a{color:var(--ink);text-decoration:none;background-image:linear-gradient(var(--parallel),var(--parallel));background-size:0 2px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .25s}
+.feature h3 a:hover,.feature h3 a:focus-visible{background-size:100% 2px}
+.feature .sub{color:var(--ink-2);margin:0;max-width:48ch}
+.feature .shot{border-left:1px solid var(--rule);background:var(--ground);display:flex;align-items:center;justify-content:center;padding:clamp(14px,2vw,22px);min-width:0}
+@media (max-width:900px){.feature .shot{border-left:0;border-top:1px solid var(--rule);order:-1}}
+.feature .shot img{display:block;width:100%;height:auto;border:1px solid var(--rule)}
+
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-top:0;margin:0 0 8px}
+@media (max-width:820px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{background:var(--panel);padding:14px 16px;min-height:96px;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.kpi .v{font-family:var(--font-mono);font-size:clamp(1.05rem,2vw,1.4rem);font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:.78rem;color:var(--muted);line-height:1.35}
+.next{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;color:var(--muted);margin-top:18px}
+
+.about{display:grid;grid-template-columns:minmax(0,58ch) minmax(0,1fr);gap:32px;align-items:start}
+@media (max-width:900px){.about{grid-template-columns:minmax(0,1fr)}}
+.about .prose p{color:var(--ink-2)}
+.about .prose b{color:var(--ink);font-weight:600}
+.interests{margin-top:26px;padding-top:18px;border-top:1px solid var(--rule)}
+.interests .eyebrow{display:block;margin-bottom:10px}
+.interests ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.interests li{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);border:1px solid var(--rule);border-radius:2px;padding:4px 9px;background:var(--panel)}
+.rail{background:var(--panel);border:1px solid var(--rule);padding:18px 20px 20px}
+.rail h4{font-family:var(--font-body);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:22px 0 10px}
+.rail h4:first-child{margin-top:0}
+.rail dl{margin:0;display:grid;gap:11px}
+.rail .row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:baseline;padding-bottom:11px;border-bottom:1px solid var(--rule)}
+.rail dl > .row:last-child{border-bottom:0;padding-bottom:0}
+.rail .row b{font-weight:600;font-size:.92rem;color:var(--ink)}
+.rail .row b a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+.rail .row b a:hover,.rail .row b a:focus-visible{border-bottom-color:var(--parallel);color:var(--parallel)}
+.rail .row .yr{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);white-space:nowrap}
+.rail .row .d{grid-column:1/-1;font-size:.82rem;color:var(--muted);line-height:1.4}
+</style>
+
+<div class="controls-bar" role="toolbar" aria-label="Language and theme">
+  <div class="seg" role="group" aria-label="Language"><button data-lang="en" aria-pressed="true">EN</button><button data-lang="es" aria-pressed="false">ES</button></div>
+  <div class="seg" role="group" aria-label="Theme"><button data-theme-pick="system" aria-pressed="true" title="System">◐</button><button data-theme-pick="light" aria-pressed="false" title="Light">☀</button><button data-theme-pick="dark" aria-pressed="false" title="Dark">☾</button></div>
+</div>
+
+<div class="wrap">
+
+<header class="masthead">
+  <div class="eyebrow" data-i18n="m.eye">Essays and data pieces</div>
+  <h1>Jesús Bolívar</h1>
+  <p class="dek" data-i18n="m.dek">Long pieces on Venezuela's macroeconomy, on education, and on the plumbing that connects the two. Every chart names its source. Every model ships its assumptions, and you can change them in the browser.</p>
+  <div class="topics"><span data-i18n="m.t1">Macroeconomics</span><span data-i18n="m.t2">Education</span><span data-i18n="m.t3">Fintech</span><span data-i18n="m.t4">Venezuela</span><span data-i18n="m.t5">English &amp; Spanish</span></div>
+</header>
+
+<section id="writing">
+  <div class="sec-head">
+    <span class="eyebrow" data-i18n="w.eye">Writing</span>
+    <h2 data-i18n="w.h">Latest piece</h2>
+  </div>
+  <article class="feature">
+    <div class="body">
+      <div class="meta">
+        <span class="chip" data-i18n="f1.chip">Data + model</span>
+        <span class="date" data-i18n="f1.date">6 September 2026</span>
+      </div>
+      <h3><a href="/KangarooPegRevisited2026/" data-piece="KangarooPegRevisited2026" data-i18n="f1.h">A Currency Is Imported. A State Is Built.</a></h3>
+      <p class="sub" data-i18n="f1.sub">Venezuela's exchange-rate regime from 2003 to 2026 and the path out of it: where the bolívar stands, where the economy must be by 2031, and the policy sequence that gets it there without asking the state to do the investing. An update of Bettocchi & Bolívar (2013).</p>
+      <p class="langs">
+        <a href="/KangarooPegRevisited2026/" data-piece="KangarooPegRevisited2026" data-piece-lang="en" data-i18n="f1.en">Read in English →</a>
+        <a href="/KangarooPegRevisited2026/es/" data-piece="KangarooPegRevisited2026" data-piece-lang="es" data-i18n="f1.es">Leer en español →</a>
+      </p>
+    </div>
+    <div class="shot">
+      <img src="/KangarooPegRevisited2026/og.jpg" width="1200" height="630" loading="lazy" decoding="async" alt="Two illustrated buildings side by side, each on a stone base labelled STRONG INSTITUTIONS. The left one is a flimsy scaffolded frame stamped FRAGILE with a dollar bill laid over it as a roof; the right one is solid and finished under the same dollar roof. The headline reads: the currency is the second answer, not the first.">
+    </div>
+  </article>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">2003 → 2026</div><div class="l" data-i18n="k1">Monthly record of the official and parallel rate, assembled and sourced</div></div>
+    <div class="kpi"><div class="v" data-i18n="k2.v">5 stages</div><div class="l" data-i18n="k2">A policy sequence, each stage with its indicator, trigger and risk</div></div>
+    <div class="kpi"><div class="v" data-i18n="k3.v">Live model</div><div class="l" data-i18n="k3">Move the assumptions and the projections redraw in the browser</div></div>
+    <div class="kpi"><div class="v">EN · ES</div><div class="l" data-i18n="k4">Written and published in both languages</div></div>
+  </div>
+  <p class="next" data-i18n="w.next">More pieces in progress.</p>
+</section>
+
+<section id="about">
+  <div class="sec-head">
+    <span class="eyebrow" data-i18n="a.eye">About</span>
+    <h2 data-i18n="a.h">Who is writing</h2>
+  </div>
+  <div class="about">
+    <div class="prose">
+      <div class="lede">
+        <img src="/assets/portrait.jpg" width="640" height="640" loading="lazy" decoding="async" alt="Jesús Bolívar">
+        <p data-i18n="a.p1">I spent fifteen years in software: McKinsey, then product at two startups that got acquired. After that I went into schools and did not come back.</p>
+      </div>
+      <p data-i18n="a.p2">My partner Karen and I built <b>Open Minds Early School</b> in Oakland: zero to eighty kids, no investors, learning most of it as we went.</p>
+      <p data-i18n="a.p3">Running a school teaches you where it breaks. Teaching is hard work; growing a school and keeping it solvent is harder. In Venezuela it is brutal: families want to pay and the money cannot get through. So we built <b>UnoPago</b>, the financial operating system for schools there: payments, billing and reconciliation in one place. A school that can collect is a school that can plan.</p>
+      <p data-i18n="a.p4">Before all this: aerospace engineering at MIT, economics at the Kennedy School. I still advise <b>Instituto Educacional Juan XXIII</b> in Venezuela, my old school, through some genuinely bad financial years.</p>
+      <p data-i18n="a.p5">Plenty of failures, a few things that worked, still learning from the people around me. Full CV at <a href="/">the CV</a>.</p>
+      <div class="interests">
+        <span class="eyebrow" data-i18n="a.oo">Out of office</span>
+        <ul>
+          <li data-i18n="oo1">Ultrarunning</li><li data-i18n="oo2">Snow sports</li><li data-i18n="oo3">Hiking</li>
+          <li data-i18n="oo4">Drone photography</li><li data-i18n="oo5">Flying</li><li data-i18n="oo6">Podcasting</li>
+          <li data-i18n="oo7">Video and sound</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="rail">
+      <h4 data-i18n="r.now">Now</h4>
+      <dl>
+        <div class="row"><b><a href="https://www.unopago.com" target="_blank" rel="noopener">UnoPago</a></b><span class="yr">2023 →</span><span class="d" data-i18n="r.n2">Founder · school payments and billing · Valencia, Venezuela</span></div>
+        <div class="row"><b><a href="https://www.openmindsearlyschool.org" target="_blank" rel="noopener">Open Minds Early School</a></b><span class="yr">2024 →</span><span class="d" data-i18n="r.n1">Co-founder and CEO · Oakland, California</span></div>
+        <div class="row"><b><a href="https://somoscuadro.com/" target="_blank" rel="noopener">Somos Cuadro</a></b><span class="yr">2026 →</span><span class="d" data-i18n="r.n4">Board member · growth strategy, digital innovation, governance</span></div>
+        <div class="row"><b><a href="https://portal.juanxxiii.edu.ve/" target="_blank" rel="noopener">Instituto Educacional Juan XXIII</a></b><span class="yr">2016 →</span><span class="d" data-i18n="r.n3">Board advisor · Valencia, Venezuela</span></div>
+      </dl>
+      <h4 data-i18n="r.before">Before</h4>
+      <dl>
+        <div class="row"><b>McKinsey &amp; Company</b><span class="yr">2017–24</span><span class="d" data-i18n="r.b1">SaaS solution leader · San Francisco, California</span></div>
+        <div class="row"><b>Nomis Solutions</b><span class="yr">2015–17</span><span class="d" data-i18n="r.b2">Senior product manager, acquired · San Bruno, California</span></div>
+        <div class="row"><b>Corrigo</b><span class="yr">2013–15</span><span class="d" data-i18n="r.b3">Senior product manager, acquired · San Mateo, California</span></div>
+        <div class="row"><b>The World Bank</b><span class="yr">2012</span><span class="d" data-i18n="r.b4">Consultant · manufacturing growth strategy · Nairobi, Kenya</span></div>
+        <div class="row"><b>SITI</b><span class="yr">2005–10</span><span class="d" data-i18n="r.b5">Founder · Venezuela's first automated toll-collection system</span></div>
+      </dl>
+      <h4 data-i18n="r.trained">Trained at</h4>
+      <dl>
+        <div class="row"><b>Harvard Kennedy School</b><span class="yr">2011–13</span><span class="d" data-i18n="r.t1">MPA / International Development</span></div>
+        <div class="row"><b>MIT</b><span class="yr">1999–2004</span><span class="d" data-i18n="r.t2">BS Aerospace Engineering · BS Mechanical Engineering</span></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<footer>
+  <div class="contact">
+    <div>
+      <span class="eyebrow" data-i18n="c.write">Write to me</span>
+      <a href="mailto:chubeto@alum.mit.edu">chubeto@alum.mit.edu</a>
+      <a href="https://wa.me/16509449655" rel="me">WhatsApp</a>
+    </div>
+    <div>
+      <span class="eyebrow" data-i18n="c.elsewhere">Elsewhere</span>
+      <a href="https://www.linkedin.com/in/bolivarj/" rel="me">LinkedIn</a>
+      <a href="https://twitter.com/chubetob" rel="me">X · @chubetob</a>
+      <a href="https://www.instagram.com/chubeton" rel="me">Instagram</a>
+    </div>
+    <div>
+      <span class="eyebrow" data-i18n="c.this">This site</span>
+      <a href="/" data-i18n="c.cv">Full CV</a>
+      <a href="/feed.xml" data-i18n="c.feed">RSS feed</a>
+    </div>
+  </div>
+  <p class="colophon" data-i18n="c.colophon">Set in Newsreader and IBM Plex. Static HTML on GitHub Pages, hand-built, no framework. Analytics are cookieless: page views and page leaves only, nothing stored in your browser, no session recording, no autocapture. © 2026 Jesús Bolívar.</p>
+</footer>
+
+</div>
+
+<script>
+/* Spanish strings. Keys match data-i18n attributes; the English markup is the source of
+   truth. The featured piece is not here: build.py takes its strings from the bundle. */
+window.ES = {
+"m.eye":"Ensayos y análisis de datos",
+"m.dek":"Textos largos sobre la macroeconomía venezolana, sobre educación y sobre la tubería que conecta ambas. Cada gráfico dice su fuente. Cada modelo trae sus supuestos, y usted puede cambiarlos en el navegador.",
+"m.t1":"Macroeconomía","m.t2":"Educación","m.t3":"Fintech","m.t4":"Venezuela","m.t5":"Inglés y español",
+"w.eye":"Escritos","w.h":"Última entrega","w.next":"Más entregas en camino.",
+"k1":"Registro mensual de la tasa oficial y la paralela, ensamblado y con fuentes",
+"k2.v":"5 etapas","k2":"Una secuencia de política, cada etapa con su indicador, disparador y riesgo",
+"k3.v":"Modelo vivo","k3":"Mueva los supuestos y las proyecciones se redibujan en el navegador",
+"k4":"Escrito y publicado en ambos idiomas",
+"a.eye":"Sobre mí","a.h":"Quién escribe",
+"a.p1":"Pasé quince años en software: McKinsey, y luego producto en dos startups que terminaron vendidas. Después me metí en colegios y no volví.",
+"a.p2":"Con mi compañera Karen levantamos <b>Open Minds Early School</b> en Oakland: de cero a ochenta niños, sin inversionistas, aprendiendo casi todo sobre la marcha.",
+"a.p3":"Dirigir un colegio te enseña dónde se rompe. Enseñar es difícil; hacer crecer un colegio y mantenerlo a flote lo es más. En Venezuela es brutal: las familias quieren pagar y el dinero no llega. Por eso construimos <b>UnoPago</b>, el sistema operativo financiero de los colegios allá: pagos, facturación y conciliación en un solo lugar. Un colegio que cobra es un colegio que puede planificar.",
+"a.p4":"Antes de todo esto: ingeniería aeroespacial en el MIT, economía en la Kennedy School. Sigo asesorando al <b>Instituto Educacional Juan XXIII</b> en Venezuela, mi colegio, en unos años financieros de verdad malos.",
+"a.p5":"Muchos fracasos, algunas cosas que funcionaron, y sigo aprendiendo de la gente que me rodea. Currículum completo en <a href=\"/\">el currículum</a>.",
+"a.oo":"Fuera de la oficina",
+"oo1":"Ultramaratón","oo2":"Deportes de nieve","oo3":"Montañismo","oo4":"Fotografía con dron","oo5":"Volar","oo6":"Pódcast","oo7":"Video y sonido",
+"r.now":"Ahora","r.before":"Antes","r.trained":"Formación",
+"r.n1":"Cofundador y CEO · Oakland, California",
+"r.n2":"Fundador · pagos y facturación escolar · Valencia, Venezuela",
+"r.n4":"Miembro del consejo · estrategia de crecimiento, innovación digital, gobernanza",
+"r.n3":"Asesor del consejo · Valencia, Venezuela",
+"r.b1":"Líder de soluciones SaaS · San Francisco, California",
+"r.b2":"Gerente sénior de producto, adquirida · San Bruno, California",
+"r.b3":"Gerente sénior de producto, adquirida · San Mateo, California",
+"r.b4":"Consultor · estrategia de crecimiento manufacturero · Nairobi, Kenia",
+"r.b5":"Fundador · el primer sistema automatizado de peaje de Venezuela",
+"r.t1":"MPA / Desarrollo Internacional",
+"r.t2":"Ing. Aeroespacial · Ing. Mecánica",
+"c.write":"Escríbeme","c.elsewhere":"En otras partes","c.this":"Este sitio",
+"c.cv":"Currículum completo","c.feed":"Fuente RSS",
+"c.colophon":"Compuesto en Newsreader e IBM Plex. HTML estático en GitHub Pages, hecho a mano, sin framework. La analítica es sin cookies: vistas y salidas de página solamente, nada se guarda en su navegador, sin grabación de sesión ni captura automática. © 2026 Jesús Bolívar."
+};
+</script>
+
+<script>Object.assign(window.ES = window.ES || {}, {"f1.chip": "Datos + modelo", "f1.date": "6 de septiembre de 2026", "f1.h": "Una moneda se importa. Un Estado se construye.", "f1.sub": "El régimen cambiario venezolano de 2003 a 2026 y la salida: dónde está el bolívar, dónde tiene que estar la economía en 2031 y la secuencia de políticas que la lleva allí sin pedirle al Estado que sea el inversionista. Actualización de Bettocchi & Bolívar (2013).", "f1.en": "Leer en inglés →", "f1.es": "Leer en español →"});</script>
+<script>
+/* Theme and language, shared by every page that is not the article.
+ *
+ * The article carries its own copy of this machinery inside its template, along with review
+ * mode. Both belong here; moving them is a later step, checked against the published bytes.
+ *
+ * A page supplies window.ES (its Spanish dictionary, keyed by data-i18n) before this runs.
+ * Leave it undefined and the language control simply does not appear.
+ */
+const store={get:k=>{try{return localStorage.getItem(k);}catch(e){return null;}},set:(k,v)=>{try{localStorage.setItem(k,v);}catch(e){}}};
+const track=(ev,props)=>{try{if(window.posthog&&posthog.capture)posthog.capture(ev,props||{});}catch(e){}};
+
+const ES = window.ES || null;
+const TR={'Language and theme':'Idioma y tema','Language':'Idioma','Theme':'Tema','System':'Sistema','Light':'Claro','Dark':'Oscuro'};
+const tr = x => (LANG==='es' && TR[x]!==undefined) ? TR[x] : x;
+
+const urlLang = new URLSearchParams(location.search).get('lang');
+let LANG = (['en','es'].includes(urlLang) && urlLang)
+        || (['en','es'].includes(store.get('kp.lang')) && store.get('kp.lang'))
+        || ((navigator.language||'').toLowerCase().startsWith('es') ? 'es' : 'en');
+if(!ES) LANG='en';
+const EN = {};   /* snapshot of the English markup, filled on the first pass */
+
+function applyLang(lang){
+  LANG=lang; store.set('kp.lang',lang); document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.dataset.i18n; if(!(k in EN)) EN[k]=el.innerHTML;
+    const v = lang==='es' ? (ES[k] ?? EN[k]) : EN[k];
+    if(el.innerHTML!==v) el.innerHTML=v;
+  });
+  document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed', b.dataset.lang===lang));
+  const bar=document.querySelector('.controls-bar');
+  if(bar){ bar.setAttribute('aria-label', tr(bar.querySelector('[data-lang]') ? 'Language and theme' : 'Theme'));
+           bar.querySelectorAll('[role="group"]').forEach(g=>g.setAttribute('aria-label', tr(g.querySelector('[data-lang]') ? 'Language' : 'Theme'))); }
+  document.querySelectorAll('[data-theme-pick]').forEach(b=>b.title=tr(b.dataset.themePick==='system'?'System':b.dataset.themePick==='light'?'Light':'Dark'));
+  /* an article is a separate page per language: send readers to the one they are reading in */
+  document.querySelectorAll('[data-piece-lang]').forEach(a=>a.setAttribute('hreflang', a.dataset.pieceLang));
+}
+function applyTheme(pick){
+  store.set('kp.theme',pick);
+  if(pick==='system') delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme=pick;
+  document.querySelectorAll('[data-theme-pick]').forEach(b=>b.setAttribute('aria-pressed', b.dataset.themePick===pick));
+}
+
+if(ES) applyLang(LANG);
+applyTheme(['light','dark','system'].includes(store.get('kp.theme')) ? store.get('kp.theme') : 'system');
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{ if(b.dataset.lang===LANG) return; track('language_switch',{to:b.dataset.lang,from:LANG}); applyLang(b.dataset.lang); }));
+document.querySelectorAll('[data-theme-pick]').forEach(b=>b.addEventListener('click',()=>{ track('theme_switch',{to:b.dataset.themePick}); applyTheme(b.dataset.themePick); }));
+document.querySelectorAll('a[data-piece]').forEach(a=>a.addEventListener('click',()=>track('piece_open',{piece:a.dataset.piece, lang:a.dataset.pieceLang||'en', from_lang:LANG})));
+</script>
+</body>
+</html>
