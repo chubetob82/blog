@@ -122,7 +122,9 @@ footer{border-top:1px solid var(--rule);margin-top:44px;padding:34px 0 64px}
 .contact a{display:block;font-size:.92rem;text-decoration:none;padding:2px 0}
 .contact a:hover{text-decoration:underline}
 .colophon{font-size:.78rem;color:var(--muted);max-width:76ch;line-height:1.5}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+html{scroll-behavior:smooth}
+footer{scroll-margin-top:24px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -144,7 +146,7 @@ footer{border-top:1px solid var(--rule);margin-top:44px;padding:34px 0 64px}
     <h1>Jesús Bolívar</h1>
     <p class="dek">I build and invest in education — schools, and the financial plumbing that keeps them open.</p>
     <div class="cta">
-      <a class="primary" href="mailto:chubeto@alum.mit.edu">Write to me</a>
+      <a class="primary" href="#contact">Contact</a>
       <a href="https://www.linkedin.com/in/bolivarj/">LinkedIn</a>
       <a href="/">Read the blog</a>
     </div>
@@ -288,18 +290,16 @@ footer{border-top:1px solid var(--rule);margin-top:44px;padding:34px 0 64px}
   </div>
 </section>
 
-<footer>
+<footer id="contact">
   <div class="contact">
     <div><span class="eyebrow">Write to me</span>
       <a href="mailto:chubeto@alum.mit.edu">chubeto@alum.mit.edu</a>
       <a href="https://wa.me/16509449655">WhatsApp</a></div>
     <div><span class="eyebrow">Elsewhere</span>
       <a href="https://www.linkedin.com/in/bolivarj/">LinkedIn</a>
-      <a href="https://twitter.com/chubetob">X · @chubetob</a>
-      <a href="https://www.instagram.com/chubeton">Instagram</a></div>
+      <a href="https://twitter.com/chubetob">X · @chubetob</a></div>
     <div><span class="eyebrow">Writing</span>
-      <a href="/">blog.bolivarjesus.com</a>
-      <a href="/feed.xml">RSS feed</a></div>
+      <a href="/">blog.bolivarjesus.com</a></div>
   </div>
   <p class="colophon">This page is a prototype, not the live site. It reproduces the content of www.bolivarjesus.com as hand-written static HTML in the same design system as the blog, so the two can be compared side by side before deciding whether to move the domain off Wix. Set in Newsreader and IBM Plex.</p>
 </footer>
