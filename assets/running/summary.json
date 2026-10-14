@@ -1,0 +1,27 @@
+{
+ "as_of": "2026-10-13",
+ "first_run": "2011-12-01",
+ "runs": 950,
+ "km": 5641,
+ "climb_m": 54021,
+ "places": 32,
+ "trail_runs_mapped": 64,
+ "races": 10,
+ "best_race": {
+  "race": "Mt. Umunhum Trail Conquest – Winter (half marathon)",
+  "date": "2024-02-03",
+  "overall": 2,
+  "rank": 92.23
+ },
+ "longest": {
+  "race": "Bryce Canyon Ultras 50K",
+  "date": "2023-05-20",
+  "watch_km": 53.9,
+  "climb_m": 1714
+ },
+ "peak_year": {
+  "year": 2023,
+  "km": 852,
+  "climb_m": 18226
+ }
+}

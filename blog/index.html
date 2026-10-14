@@ -167,6 +167,8 @@ header.masthead{padding:clamp(48px,9vw,92px) 0 34px;border-bottom:1px solid var(
 .interests .eyebrow{display:block;margin-bottom:10px}
 .interests ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .interests li{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);border:1px solid var(--rule);border-radius:2px;padding:4px 9px;background:var(--panel)}
+.interests a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+.interests a:hover,.interests a:focus-visible{color:var(--parallel);border-bottom-color:currentColor}
 .rail{background:var(--panel);border:1px solid var(--rule);padding:18px 20px 20px}
 .rail h4{font-family:var(--font-body);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:22px 0 10px}
 .rail h4:first-child{margin-top:0}
@@ -244,7 +246,7 @@ header.masthead{padding:clamp(48px,9vw,92px) 0 34px;border-bottom:1px solid var(
       <div class="interests">
         <span class="eyebrow" data-i18n="a.oo">Out of office</span>
         <ul>
-          <li data-i18n="oo1">Ultrarunning</li><li data-i18n="oo2">Snow sports</li><li data-i18n="oo3">Hiking</li>
+          <li><a href="/running/" data-i18n="oo1">Ultrarunning</a></li><li data-i18n="oo2">Snow sports</li><li data-i18n="oo3">Hiking</li>
           <li data-i18n="oo4">Drone photography</li><li data-i18n="oo5">Flying</li><li data-i18n="oo6">Podcasting</li>
           <li data-i18n="oo7">Video and sound</li>
         </ul>
@@ -287,6 +289,7 @@ header.masthead{padding:clamp(48px,9vw,92px) 0 34px;border-bottom:1px solid var(
       <a href="https://www.linkedin.com/in/bolivarj/" rel="me">LinkedIn</a>
       <a href="https://twitter.com/chubetob" rel="me">X · @chubetob</a>
       <a href="https://www.instagram.com/chubeton" rel="me">Instagram</a>
+      <a href="/running/" data-i18n="c.running">Running</a>
     </div>
     <div>
       <span class="eyebrow" data-i18n="c.this">This site</span>
@@ -332,7 +335,7 @@ window.ES = {
 "r.t1":"MPA / Desarrollo Internacional",
 "r.t2":"Ing. Aeroespacial · Ing. Mecánica",
 "c.write":"Escríbeme","c.elsewhere":"En otras partes","c.this":"Este sitio",
-"c.cv":"Currículum completo","c.feed":"Fuente RSS",
+"c.cv":"Currículum completo","c.running":"Corriendo","c.feed":"Fuente RSS",
 "c.colophon":"Compuesto en Newsreader e IBM Plex. HTML estático en GitHub Pages, hecho a mano, sin framework. La analítica es sin cookies: vistas y salidas de página solamente, nada se guarda en su navegador, sin grabación de sesión ni captura automática. © 2026 Jesús Bolívar."
 };
 </script>
