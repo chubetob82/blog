@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Running · Jesús Bolívar</title>
-<meta name="description" content="950 runs, 5,641 km and 54 km of climbing, from Boston to Bryce Canyon. Fifteen years of running, the trail routes since 2022 and ten trail races.">
+<meta name="description" content="Running since 2011, from Boston roads to Bay Area trails: every trail route, every trail race, and every place run, drawn from the data.">
 <meta name="author" content="Jesús Bolívar">
 <link rel="canonical" href="https://www.bolivarjesus.com/running/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mostly trails">
-<meta property="og:description" content="950 runs, 5,641 km and 54 km of climbing, from Boston to Bryce Canyon. Fifteen years of running, the trail routes since 2022 and ten trail races.">
+<meta property="og:description" content="Running since 2011, from Boston roads to Bay Area trails: every trail route, every trail race, and every place run, drawn from the data.">
 <meta property="og:url" content="https://www.bolivarjesus.com/running/">
 <meta property="og:image" content="https://www.bolivarjesus.com/assets/og-running.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Jesús Bolívar">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mostly trails">
-<meta name="twitter:description" content="950 runs, 5,641 km and 54 km of climbing, from Boston to Bryce Canyon. Fifteen years of running, the trail routes since 2022 and ten trail races.">
+<meta name="twitter:description" content="Running since 2011, from Boston roads to Bay Area trails: every trail route, every trail race, and every place run, drawn from the data.">
 <meta name="twitter:image" content="https://www.bolivarjesus.com/assets/og-running.jpg">
 <meta name="theme-color" content="#F5F4EF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#111A22" media="(prefers-color-scheme: dark)">
@@ -183,8 +183,8 @@ header.masthead{padding:clamp(48px,9vw,92px) 0 40px}
 .race:hover .nm{color:var(--parallel)}
 .race .dt{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;align-self:baseline;padding-top:2px}
 .race .nm{display:block;font-weight:600;font-size:1rem}
-.race .sub,.race .res{display:block;font-family:var(--font-mono);font-size:.74rem;color:var(--muted);margin-top:3px}
-.race .res{color:var(--ink-2);font-variant-numeric:tabular-nums}
+.race .sub{display:block;font-family:var(--font-mono);font-size:.74rem;color:var(--muted);margin-top:3px}
+.race .res{display:flex;flex-wrap:wrap;font-family:var(--font-mono);font-size:.74rem;color:var(--ink-2);font-variant-numeric:tabular-nums;margin-top:3px}
 .race .best{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.04em;color:var(--official);border:1px solid var(--official);border-radius:2px;padding:1px 6px;margin-left:8px;white-space:nowrap;vertical-align:2px;font-weight:400}
 .race .ex{display:flex;gap:10px;align-items:center}
 .race .ex svg{display:block}
@@ -232,6 +232,44 @@ header.masthead{padding:clamp(48px,9vw,92px) 0 40px}
 .plist{columns:4 180px;column-gap:28px;list-style:none;margin:22px 0 0;padding:0;font-family:var(--font-mono);font-size:.78rem}
 .plist li{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid var(--rule);break-inside:avoid;color:var(--ink-2)}
 .plist li span{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.plist-more{display:none;margin-top:12px}
+/* first on the page, so on a phone the list stops at eight and opens on request */
+@media (max-width:599px){.plist.short .more{display:none}.plist.short + .plist-more{display:inline-block}}
+
+/* navigation */
+.home{display:inline-block;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.04em;color:var(--muted);text-decoration:none;margin-bottom:22px}
+.home:hover,.home:focus-visible{color:var(--parallel)}
+.jump{display:flex;flex-wrap:wrap;gap:6px 20px;margin:20px 0 0;font-family:var(--font-mono);font-size:.78rem}
+.jump a{text-decoration:none;color:var(--ink-2);border-bottom:1px solid var(--rule)}
+.jump a:hover,.jump a:focus-visible{color:var(--parallel);border-bottom-color:currentColor}
+section[id]{scroll-margin-top:12px}
+
+/* map furniture: legend, what is out of view, the phone hint */
+.map .legend-m{position:absolute;left:14px;bottom:42px;display:flex;gap:12px;font-family:var(--font-mono);font-size:.68rem;color:var(--muted);pointer-events:none}
+.map .legend-m i{display:inline-block;width:16px;border-top:1.5px solid var(--ink);opacity:.45;vertical-align:middle;margin-right:5px}
+.map .legend-m i.r{border-top:2px solid var(--official);opacity:1}
+.map .where small{display:block;font-size:.7rem;text-transform:none;letter-spacing:0;margin-top:5px;color:var(--ink-2);line-height:1.5}
+.map .outside{position:absolute;right:10px;top:44px;background:var(--panel);padding:2px 0 2px 6px;display:flex;gap:8px;align-items:center;font-family:var(--font-mono);font-size:.7rem;color:var(--muted)}
+.map .hint{position:absolute;left:50%;bottom:44px;transform:translateX(-50%);max-width:86%;background:var(--ink);color:var(--ground);font-family:var(--font-mono);font-size:.74rem;padding:6px 10px;border-radius:2px;pointer-events:none;opacity:0;transition:opacity .2s;text-align:center}
+.map .hint.on{opacity:.92}
+
+/* races as a table on wide screens: time, place and rank in columns */
+.race .res i{font-style:normal}
+.race .res span+span::before{content:"·";margin:0 .5em;color:var(--muted)}
+.races .head{display:none}
+@media (min-width:641px) and (max-width:899px){
+  .race .res{grid-column:2;grid-row:2;margin-top:0}
+  .race .ex{grid-column:3;grid-row:1/3}
+}
+@media (min-width:900px){
+  .race{grid-template-columns:100px minmax(0,1fr) 280px 220px}
+  .race .res{display:grid;grid-template-columns:80px 90px 70px;margin:0;align-self:center}
+  .race .res span+span::before{content:none}
+  .race .res .pre{display:none}
+  .races .head{display:grid;grid-template-columns:100px minmax(0,1fr) 280px 220px;gap:6px 24px;padding:10px 0 8px;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .races .head .cols{display:grid;grid-template-columns:80px 90px 70px}
+}
+.detail .onmap{grid-column:1/-1;justify-self:start}
 
 .now p{font-family:var(--font-display);font-size:clamp(1.1rem,1.9vw,1.3rem);color:var(--ink-2);max-width:58ch;line-height:1.45}
 </style>
@@ -244,9 +282,10 @@ header.masthead{padding:clamp(48px,9vw,92px) 0 40px}
 <div class="wrap">
 
 <header class="masthead">
-  <div class="eyebrow" data-i18n="m.eye">Running · since 2011</div>
+  <a class="home" href="/" data-i18n="m.home">← Jesús Bolívar</a>
+  <div class="eyebrow" data-i18n="m.eye">Running · since <span data-v="first_year">2011</span></div>
   <h1 data-i18n="m.h">Mostly trails</h1>
-  <p class="dek" data-i18n="m.dek">950 runs, 5,641 km and 54 km of climbing, from Boston to Bryce Canyon. These days, mostly the East Bay hills.</p>
+  <p class="dek" data-i18n="m.dek"><span data-v="runs">950</span> runs, <span data-v="km">5,641</span> km and <span data-v="climb_km">54</span> km of climbing, from Boston to Bryce Canyon. These days, mostly the East Bay hills.</p>
   <div class="cards" id="stats">
     <div class="card"><b data-stat="runs">950</b><span data-i18n="s.runs">runs</span></div>
     <div class="card"><b data-stat="km">5,641</b><span data-i18n="s.km">km</span></div>
@@ -254,38 +293,39 @@ header.masthead{padding:clamp(48px,9vw,92px) 0 40px}
     <div class="card"><b data-stat="places">32</b><span data-i18n="s.places">places</span></div>
     <div class="card"><b data-stat="races">10</b><span data-i18n="s.races">races</span></div>
   </div>
+  <nav class="jump" aria-label="On this page"><a href="#places" data-i18n="j.p">Places</a><a href="#trails" data-i18n="j.t">Trails</a><a href="#races" data-i18n="j.r">Races</a><a href="#years" data-i18n="j.y">By year</a><a href="#now" data-i18n="j.n">Now</a></nav>
 </header>
 
+<section id="places">
+  <div class="sec-head"><span class="eyebrow" data-i18n="p.eye">Places</span><h2 data-i18n="p.h"><span data-v="places">32</span> places</h2></div>
+  <p class="lead" data-i18n="p.lead">Every place I have run, sized by distance. Each dot is the middle of an area about 40 km across, not a starting point.</p>
+  <div class="world" id="world"></div>
+  <ul class="plist" id="place-list"></ul>
+</section>
+
 <section id="trails">
-  <div class="sec-head"><span class="eyebrow" data-i18n="t.eye">The trails</span><h2 data-i18n="t.h">Four years of trail routes</h2></div>
-  <p class="lead" data-i18n="t.lead">Every GPS-tracked trail run and race since October 2022, drawn on top of each other. Where lines pile up and darken are the favourite trails. Races are in amber.</p>
+  <div class="sec-head"><span class="eyebrow" data-i18n="t.eye">The trails</span><h2 data-i18n="t.h">Trail routes since <span data-v="trail_year">2022</span></h2></div>
+  <p class="lead" data-i18n="t.lead">Every GPS-tracked trail run and race, drawn on top of each other. Where lines pile up and darken are the favourite trails. Races are in amber.</p>
   <ul class="chips" id="chips" aria-label="Place"></ul>
   <div class="panel map" id="map">
     <div class="loading" data-i18n="t.loading">Loading routes…</div>
   </div>
-  <p class="note" data-i18n="t.cap">64 trail runs since Oct 2022. Starts and finishes near places I go often are trimmed. Drag to pan; pinch, double-click or Ctrl-scroll to zoom; All shows every route.</p>
+  <p class="note" data-i18n="t.cap"><span data-v="trail_runs">64</span> trail runs since <span data-v="trail_year">2022</span>. Starts and finishes near places I go often are trimmed. Drag to pan; pinch, double-click or Ctrl-scroll to zoom; All shows every route.</p>
 </section>
 
 <section id="races">
-  <div class="sec-head"><span class="eyebrow" data-i18n="r.eye">Races</span><h2 data-i18n="r.h">Ten trail races, 2022–2024</h2></div>
+  <div class="sec-head"><span class="eyebrow" data-i18n="r.eye">Races</span><h2 data-i18n="r.h"><span data-v="races">10</span> trail races, <span data-v="race_years">2022–2024</span></h2></div>
   <p class="lead" data-i18n="r.lead">Eight of them between January and June 2023, the season that built up to two 50Ks. Open a race for its elevation profile, route and pace.</p>
   <ul class="races" id="race-list"></ul>
   <p class="note" data-i18n="r.note">UltraSignup rank is the winner's time as a percentage of mine: 100% would be winning. Pace uses the distance my watch measured; grade-adjusted pace evens out the climbing. <a href="https://ultrasignup.com/results_participant.aspx?fname=Jesus&amp;lname=Bolivar" rel="noopener">Official results from UltraSignup ↗</a></p>
 </section>
 
 <section id="years">
-  <div class="sec-head"><span class="eyebrow" data-i18n="y.eye">By year</span><h2 data-i18n="y.h">Fifteen years</h2></div>
+  <div class="sec-head"><span class="eyebrow" data-i18n="y.eye">By year</span><h2 data-i18n="y.h"><span data-v="span_years">15</span> years</h2></div>
   <p class="lead" data-i18n="y.lead">Roads in Boston first, then roads in the Bay Area, then a long quiet stretch. Trails from 2022, and with them the 2023 ultra season. 2024 was nearly a year off; 2025 and 2026 are the way back.</p>
   <div class="legend"><span style="--sw:var(--parallel)" data-i18n="y.road">Road</span><span style="--sw:var(--official)" data-i18n="y.trail">Trail</span></div>
   <div class="chart" id="year-chart"></div>
   <p class="note" id="year-note"></p>
-</section>
-
-<section id="places">
-  <div class="sec-head"><span class="eyebrow" data-i18n="p.eye">Places</span><h2 data-i18n="p.h">Thirty-two places</h2></div>
-  <p class="lead" data-i18n="p.lead">Every place I have run, sized by distance. Each dot is the middle of an area about 40 km across, not a starting point.</p>
-  <div class="world" id="world"></div>
-  <ul class="plist" id="place-list"></ul>
 </section>
 
 <section class="now" id="now">
@@ -322,20 +362,21 @@ header.masthead{padding:clamp(48px,9vw,92px) 0 40px}
 <script>
 /* Spanish strings. Keys match data-i18n attributes; the English markup is the source of truth. */
 window.ES = {
-"m.eye":"Corriendo · desde 2011","m.h":"Sobre todo senderos",
-"m.dek":"950 carreras, 5.641 km y 54 km de desnivel, de Boston a Bryce Canyon. Hoy, sobre todo los cerros del East Bay.",
+"m.home":"← Jesús Bolívar","m.eye":"Corriendo · desde <span data-v=\"first_year\">2011</span>","m.h":"Sobre todo senderos",
+"j.t":"Senderos","j.r":"Competencias","j.y":"Por año","j.p":"Lugares","j.n":"Ahora",
+"m.dek":"<span data-v=\"runs\">950</span> carreras, <span data-v=\"km\">5.641</span> km y <span data-v=\"climb_km\">54</span> km de desnivel, de Boston a Bryce Canyon. Hoy, sobre todo los cerros del East Bay.",
 "s.runs":"carreras","s.km":"km","s.climb":"m de desnivel","s.places":"lugares","s.races":"competencias",
-"t.eye":"Los senderos","t.h":"Cuatro años de rutas de montaña",
-"t.lead":"Cada salida de sendero y cada competencia con GPS desde octubre de 2022, dibujadas una sobre otra. Donde las líneas se acumulan y oscurecen están los senderos favoritos. Las competencias van en ámbar.",
+"t.eye":"Los senderos","t.h":"Rutas de montaña desde <span data-v=\"trail_year\">2022</span>",
+"t.lead":"Cada salida de sendero y cada competencia con GPS, dibujadas una sobre otra. Donde las líneas se acumulan y oscurecen están los senderos favoritos. Las competencias van en ámbar.",
 "t.loading":"Cargando rutas…",
-"t.cap":"64 salidas de sendero desde oct 2022. Los inicios y finales cerca de lugares que frecuento están recortados. Arrastre para moverse; pellizque, haga doble clic o use Ctrl y la rueda para acercar; Todo muestra cada ruta.",
-"r.eye":"Competencias","r.h":"Diez carreras de montaña, 2022–2024",
+"t.cap":"<span data-v=\"trail_runs\">64</span> salidas de sendero desde <span data-v=\"trail_year\">2022</span>. Los inicios y finales cerca de lugares que frecuento están recortados. Arrastre para moverse; pellizque, haga doble clic o use Ctrl y la rueda para acercar; Todo muestra cada ruta.",
+"r.eye":"Competencias","r.h":"<span data-v=\"races\">10</span> carreras de montaña, <span data-v=\"race_years\">2022–2024</span>",
 "r.lead":"Ocho de ellas entre enero y junio de 2023, la temporada que llevó a dos 50K. Abra una competencia para ver su perfil de altimetría, la ruta y el ritmo.",
 "r.note":"El rank de UltraSignup es el tiempo del ganador como porcentaje del mío: 100% sería ganar. El ritmo usa la distancia que midió mi reloj; el ritmo ajustado por pendiente compensa la subida. <a href=\"https://ultrasignup.com/results_participant.aspx?fname=Jesus&amp;lname=Bolivar\" rel=\"noopener\">Resultados oficiales en UltraSignup ↗</a>",
-"y.eye":"Por año","y.h":"Quince años",
+"y.eye":"Por año","y.h":"<span data-v=\"span_years\">15</span> años",
 "y.lead":"Primero el asfalto en Boston, luego el asfalto del Bay Area, después una larga pausa. Senderos desde 2022, y con ellos la temporada de ultras de 2023. 2024 fue casi un año en blanco; 2025 y 2026 son el regreso.",
 "y.road":"Asfalto","y.trail":"Sendero",
-"p.eye":"Lugares","p.h":"Treinta y dos lugares",
+"p.eye":"Lugares","p.h":"<span data-v=\"places\">32</span> lugares",
 "p.lead":"Cada lugar donde he corrido, según la distancia. Cada punto es el centro de un área de unos 40 km, no un punto de partida.",
 "n.eye":"Ahora","n.h":"El regreso",
 "n.p1":"En 2026 vuelvo a correr con constancia, y más de la mitad en senderos. La próxima meta es en asfalto: intentar bajar mi marca de medio maratón en otoño de 2027, contra el 1:44:37 que corrí en el Berkeley Half en noviembre de 2023.",
@@ -356,19 +397,25 @@ const lang = () => document.documentElement.lang === 'es' ? 'es' : 'en';
 /* strings the scripts write; the markup's strings are in window.ES */
 const T = {
   en: {mon:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], overall:n=>ord(n)+' overall', rank:p=>'rank '+p+'%',
-       best:'2nd overall', climb:'Climb', pace:'Pace', gap:'Grade-adjusted', time:'Official time', dist:'Watch distance', min:'min', runs:'runs', run:'run',
+       ordn:n=>ord(n), ovr:' overall', best:'2nd overall', climb:'Climb', pace:'Pace', gap:'Grade-adjusted', time:'Official time', dist_:'Watch distance', min:'min', runs:'runs', run:'run',
        m:'m climbed', soFar:'so far', boston:'Boston', ultra:'ultra season', reset:'Reset', all:'All', allL:'Show all routes', zin:'Zoom in', zout:'Zoom out', trail:'trail',
        mapLabel:(p,n,r)=>`Map of ${n} trail routes around ${p}${r?`, ${r} of them races`:''}.`,
-       yearsLabel:'Kilometres run per year, 2011 to 2026, split into road and trail. Peak in 2023 at 852 km.',
-       worldLabel:'World map of the 32 places run, the largest dots being the SF Bay Area and Boston.',
-       peak:(y,m)=>`${y} was also the most climbing in a year: ${m} m.`, prof:'Elevation profile', route:'Route', place:'Place'},
+       yearsLabel:(a,b,y,k)=>`Kilometres run per year, ${a} to ${b}, split into road and trail. Peak in ${y} at ${k} km.`,
+       worldLabel:n=>`World map of the ${n} places run, dots sized by distance.`,
+       peak:(y,m)=>`${y} was also the most climbing in a year: ${m} m.`, prof:'Elevation profile', route:'Route', place:'Place',
+       onMap:'See on map ↑', allPlaces:n=>`All ${n} places`, runsL:'Trail runs', racesL:'Races', hint:'Pinch or tap + to zoom, then drag',
+       outside:n=>n===1?'1 route outside this view':`${n} routes outside this view`,
+       cols:['Time','Place','Rank'], colEx:'Profile · route', dist:d=>d},
   es: {mon:['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'], overall:n=>n+'.º en la general', rank:p=>'rank '+p+'%',
-       best:'2.º en la general', climb:'Desnivel', pace:'Ritmo', gap:'Ajustado por pendiente', time:'Tiempo oficial', dist:'Distancia del reloj', min:'min', runs:'salidas', run:'salida',
+       ordn:n=>n+'.º', ovr:' en la general', best:'2.º en la general', climb:'Desnivel', pace:'Ritmo', gap:'Ajustado por pendiente', time:'Tiempo oficial', dist_:'Distancia del reloj', min:'min', runs:'salidas', run:'salida',
        m:'m de desnivel', soFar:'hasta hoy', boston:'Boston', ultra:'temporada de ultras', reset:'Reiniciar', all:'Todo', allL:'Ver todas las rutas', zin:'Acercar', zout:'Alejar', trail:'sendero',
        mapLabel:(p,n,r)=>`Mapa de ${n} rutas de sendero en ${p}${r?`, ${r} de ellas competencias`:''}.`,
-       yearsLabel:'Kilómetros corridos por año, de 2011 a 2026, divididos en asfalto y sendero. Máximo en 2023 con 852 km.',
-       worldLabel:'Mapa mundial de los 32 lugares donde he corrido; los puntos más grandes son el SF Bay Area y Boston.',
-       peak:(y,m)=>`${y} fue también el año de más desnivel: ${m} m.`, prof:'Perfil de altimetría', route:'Ruta', place:'Lugar'}
+       yearsLabel:(a,b,y,k)=>`Kilómetros corridos por año, de ${a} a ${b}, divididos en asfalto y sendero. Máximo en ${y} con ${k} km.`,
+       worldLabel:n=>`Mapa mundial de los ${n} lugares donde he corrido, con puntos según la distancia.`,
+       peak:(y,m)=>`${y} fue también el año de más desnivel: ${m} m.`, prof:'Perfil de altimetría', route:'Ruta', place:'Lugar',
+       onMap:'Ver en el mapa ↑', allPlaces:n=>`Los ${n} lugares`, runsL:'Salidas', racesL:'Competencias', hint:'Pellizque o toque + para acercar; luego arrastre',
+       outside:n=>n===1?'1 ruta fuera de esta vista':`${n} rutas fuera de esta vista`,
+       cols:['Tiempo','Puesto','Rank'], colEx:'Perfil · ruta', dist:d=>({'Half marathon':'Medio maratón','Marathon':'Maratón'})[d]||d}
 };
 const t = k => T[lang()][k];
 function ord(n){const s=['th','st','nd','rd'],v=n%100;return n+(s[(v-20)%10]||s[v]||s[0]);}
@@ -414,8 +461,20 @@ function tip(box){
   };
 }
 
-/* ---- header numbers ---- */
-getJSON('summary.json').then(s => { document.querySelectorAll('[data-stat]').forEach(b => b.textContent = num(s[b.dataset.stat])); }).catch(()=>{});
+/* ---- numbers in the prose, read from the data so they never go stale. chrome.js rewrites the
+   [data-i18n] markup on a language switch, so fillVars runs again after every switch. ---- */
+let VARS = null;
+function fillVars(){
+  document.querySelectorAll('[data-stat]').forEach(b => VARS && (b.textContent = num(VARS.stat[b.dataset.stat])));
+  if (VARS) document.querySelectorAll('[data-v]').forEach(e => { const v = VARS.v[e.dataset.v]; if (v !== undefined) e.textContent = typeof v === 'number' ? num(v) : v; });
+}
+Promise.all([getJSON('summary.json'), getJSON('races.json'), getJSON('years.json')]).then(([s, r, y]) => {
+  const ry = r.map(x => +x.date.slice(0,4)), y0 = Math.min(...ry), y1 = Math.max(...ry), fy = +s.first_run.slice(0,4);
+  VARS = {stat:s, v:{first_year:String(fy), runs:s.runs, km:s.km, climb_km:Math.round(s.climb_m/1000), trail_runs:s.trail_runs_mapped,
+    trail_year:String((y.find(x => x.trail_km > 0) || y[0]).year), races:s.races, race_years:y0 === y1 ? String(y0) : `${y0}–${y1}`,
+    places:s.places, span_years:y[y.length-1].year - fy}};
+  fillVars();
+}).catch(()=>{});
 
 /* ---- the trails map ---- */
 const mapBox = $('#map');
@@ -427,7 +486,7 @@ function placeChips(){
     const li = document.createElement('li'), b = document.createElement('button');
     b.type = 'button'; b.setAttribute('aria-pressed', p === M.place); b.textContent = p;
     const i = document.createElement('i'); i.textContent = n; b.appendChild(i);
-    b.addEventListener('click', () => { if (p === M.place) return; M.place = p; ul.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); resetView(); drawMap(); });
+    b.addEventListener('click', () => { if (p === M.place) return; M.place = p; M.sel = null; ul.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); resetView(); drawMap(); });
     li.appendChild(b); ul.appendChild(li);
   });
 }
@@ -445,28 +504,47 @@ function drawMap(animate){
   for (const sg of near.flatMap(segs)) for (const p of sg) { const [x,y] = pr.f(p); x0=Math.min(x0,x); x1=Math.max(x1,x); y0=Math.min(y0,y); y1=Math.max(y1,y); }
   const hk = near.length ? Math.max(1, Math.min(40, (W-2*pad)/Math.max(x1-x0,1), (H-2*pad)/Math.max(y1-y0,1))) : 1;
   M.home = hk > 1 ? {k:hk, tx:W/2 - hk*(x0+x1)/2, ty:H/2 - hk*(y0+y1)/2} : {k:1, tx:0, ty:0};
+  const wantHome = M.needHome;
   if (M.needHome) { Object.assign(M, M.home); M.needHome = false; }
-  M.pr = pr;
+  M.pr = pr; M.W = W; M.H = H;
   mapBox.replaceChildren();
   const svg = svgEl(W, H, t('mapLabel')(M.place, runs.length, runs.filter(r => r.race).length));
   svg.removeAttribute('width'); svg.removeAttribute('height');
-  const g = el('g', {}, svg), vis = el('g', {}, g), hl = el('path', {class:'route hl'}, g), hits = el('g', {}, g);
+  const g = el('g', {}, svg), vis = el('g', {}, g), fhl = el('path', {class:'route hl race'}, g), hl = el('path', {class:'route hl'}, g), hits = el('g', {}, g);
+  fhl.style.display = 'none';
   hl.style.display = 'none';
+  M.boxes = [];
   const paths = runs.map((r, i) => {
     const d = pathD(segs(r), pr.f);
+    let a=1e9, b=1e9, c=-1e9, e=-1e9; for (const sg of segs(r)) for (const q of sg) { const [x,y] = pr.f(q); a=Math.min(a,x); c=Math.max(c,x); b=Math.min(b,y); e=Math.max(e,y); }
+    M.boxes.push([a,b,c,e]);
     const p = el('path', {d, class:'route' + (r.race ? ' race' : '')}, vis);
     const h = el('path', {d, class:'hit'}, hits); h.dataset.i = i;
     return p;
   });
   mapBox.appendChild(svg);
   const where = document.createElement('div'); where.className = 'where'; where.textContent = M.place; mapBox.appendChild(where);
+  /* a place with a handful of runs gets them listed: no need to hunt for a line to hover */
+  if (runs.length <= 3) runs.forEach(r => { const sm = document.createElement('small'); sm.textContent = `${r.race ? r.race + ' · ' : ''}${day(r.date)} · ${dec(r.km)} km · ${num(r.climb)} m`; where.appendChild(sm); });
+  const lg = document.createElement('div'); lg.className = 'legend-m';
+  [['', t('runsL')], ['r', t('racesL')]].forEach(([c, txt]) => { if (c === 'r' ? runs.some(r => r.race) : runs.some(r => !r.race)) { const sp = document.createElement('span'), i = document.createElement('i'); i.className = c; sp.append(i, txt); lg.appendChild(sp); } });
+  mapBox.appendChild(lg);
+  const out = document.createElement('div'); out.className = 'outside'; out.hidden = true; mapBox.appendChild(out); M.out = out;
+  const hint = document.createElement('div'); hint.className = 'hint'; hint.textContent = t('hint'); mapBox.appendChild(hint); M.hintEl = hint;
   const scale = document.createElement('div'); scale.className = 'scale'; mapBox.appendChild(scale); M.scale = scale;
   const zoom = document.createElement('div'); zoom.className = 'zoom';
-  [['+', t('zin'), () => zoomBy(1.6, W/2, H/2)], ['−', t('zout'), () => zoomBy(1/1.6, W/2, H/2)], [t('all'), t('allL'), () => { M.k = 1; M.tx = 0; M.ty = 0; apply(); }], [t('reset'), t('reset'), () => { Object.assign(M, M.home); apply(); }]].forEach(([txt, lab, fn]) => {
+  [['+', t('zin'), () => zoomBy(1.6, W/2, H/2)], ['−', t('zout'), () => zoomBy(1/1.6, W/2, H/2)], [t('reset'), t('reset'), () => { M.sel = null; resetView(); drawMap(); }]].forEach(([txt, lab, fn]) => {
     const b = document.createElement('button'); b.type = 'button'; b.textContent = txt; b.setAttribute('aria-label', lab); b.addEventListener('click', fn); zoom.appendChild(b);
   });
   mapBox.appendChild(zoom);
   const tp = tip(mapBox);
+  /* "See on map" from a race: frame its route and say which it is. It stays selected through
+     redraws (a resize, a language switch) until another place is picked or Reset is pressed. */
+  const fi = M.sel ? runs.findIndex(r => r.race && r.date === M.sel) : -1;
+  if (fi >= 0 && wantHome) {
+    const [a,b,c,e] = M.boxes[fi], k = Math.max(1, Math.min(40, (W-2*pad)/Math.max(c-a,1), (H-2*pad)/Math.max(e-b,1)));
+    Object.assign(M, {k, tx:W/2 - k*(a+c)/2, ty:H/2 - k*(b+e)/2});
+  }
   M.g = g; M.svg = svg; M.tip = tp; apply();
 
   const show = (i, e) => {
@@ -476,6 +554,11 @@ function drawMap(animate){
     tp.show(lines, e.clientX, e.clientY);
   };
   const hide = () => { hl.style.display = 'none'; tp.hide(); };
+  if (fi >= 0) {
+    const r = runs[fi];
+    fhl.setAttribute('d', paths[fi].getAttribute('d')); fhl.style.display = '';
+    if (runs.length > 3) { const sm = document.createElement('small'); sm.textContent = `${r.race} · ${day(r.date)} · ${dec(r.km)} km · ${num(r.climb)} m`; where.appendChild(sm); }
+  }
   hits.addEventListener('pointermove', e => { if (!M.dragging && e.target.dataset.i) show(+e.target.dataset.i, e); });
   hits.addEventListener('pointerleave', hide);
   svg.addEventListener('click', e => { if (M.moved) return; if (e.target.dataset.i) show(+e.target.dataset.i, e); else hide(); });
@@ -489,6 +572,11 @@ function drawMap(animate){
   panZoom(svg, hide);
 }
 function resetView(){ M.needHome = true; }
+function focusRace(date){
+  const tr = M.trails && M.trails.find(x => x.race && x.date === date); if (!tr) return;
+  M.place = tr.place; M.sel = date; M.needHome = true; placeChips(); drawMap();
+  $('#trails').scrollIntoView({behavior: reduced ? 'auto' : 'smooth'});
+}
 function apply(){
   M.g.setAttribute('transform', `translate(${M.tx.toFixed(1)},${M.ty.toFixed(1)}) scale(${M.k})`);
   mapBox.classList.toggle('zoomed', M.k > 1.01);
@@ -496,6 +584,12 @@ function apply(){
   const nice = [0.1,0.2,0.5,1,2,5,10,20,50,100].filter(v => v * pxPerKm <= 110).pop() || 0.1;
   M.scale.replaceChildren(); const bar = document.createElement('i'); bar.style.width = (nice * pxPerKm).toFixed(1) + 'px';
   M.scale.append(bar, nice < 1 ? `${nice*1000} m` : `${nice} km`);
+  /* routes that the current view leaves out entirely, with a way to see them */
+  const vx0 = -M.tx/M.k, vy0 = -M.ty/M.k, vx1 = (M.W - M.tx)/M.k, vy1 = (M.H - M.ty)/M.k;
+  const n = M.boxes.filter(([a,b,c,e]) => c < vx0 || a > vx1 || e < vy0 || b > vy1).length;
+  M.out.hidden = !n; M.out.replaceChildren();
+  if (n) { const b = document.createElement('button'); b.type = 'button'; b.className = 'textbtn'; b.textContent = t('all'); b.setAttribute('aria-label', t('allL'));
+    b.addEventListener('click', () => { M.k = 1; M.tx = 0; M.ty = 0; apply(); }); M.out.append(t('outside')(n), b); }
 }
 function zoomBy(f, px, py){
   const k = Math.min(40, Math.max(1, M.k * f)); f = k / M.k;
@@ -514,7 +608,10 @@ function panZoom(svg, hide){
     const prev = pts.get(e.pointerId), cur = loc(e); pts.set(e.pointerId, cur);
     if (pts.size === 1) {
       if (!M.moved && Math.hypot(cur[0]-prev[0], cur[1]-prev[1]) < 3 && !M.dragging) { pts.set(e.pointerId, prev); return; }
-      if (e.pointerType === 'touch' && M.k <= 1.01) return;   /* let a finger scroll the page until zoomed in */
+      if (e.pointerType === 'touch' && M.k <= 1.01) {   /* let a finger scroll the page until zoomed in, and say how to move the map, once */
+        if (!M.hinted && M.hintEl) { M.hinted = true; M.hintEl.classList.add('on'); setTimeout(() => M.hintEl && M.hintEl.classList.remove('on'), 2400); }
+        return;
+      }
       if (!M.dragging) { M.dragging = true; svg.classList.add('drag'); svg.setPointerCapture(e.pointerId); hide(); }
       M.moved = true; M.tx += cur[0]-prev[0]; M.ty += cur[1]-prev[1]; apply();
     } else if (pts.size === 2) {
@@ -549,11 +646,15 @@ mapIO.observe(mapBox);
 /* ---- races ---- */
 let RACES = null, BEST = null, OPEN = null;
 const raceRoute = r => M.trails && M.trails.find(x => x.race && x.date === r.date);
+/* the small profiles share one scale, width by distance and height by relief, so a 50K looks
+   like a 50K next to a half marathon. The open race's large profile has its own axes. */
+let SCALE = null;
 function profile(r, w, h, axes){
   const e = r.profile.elev_m, step = r.profile.step_km, n = e.length;
   const lo = Math.min(...e), hi = Math.max(...e);
   const m = axes ? {l:40, r:8, t:8, b:22} : {l:1, r:1, t:3, b:1};
-  const X = i => m.l + i/(n-1) * (w - m.l - m.r), Y = v => m.t + (1 - (v-lo)/((hi-lo)||1)) * (h - m.t - m.b);
+  const sw = axes || !SCALE ? 1 : (n-1)*step / SCALE.km, sh = axes || !SCALE ? 1 : (hi-lo) / SCALE.relief;
+  const X = i => m.l + i/(n-1) * (w - m.l - m.r) * sw, Y = v => m.t + (1 - (v-lo)/((hi-lo)||1) * sh) * (h - m.t - m.b);
   const s = svgEl(w, h, axes ? `${t('prof')}: ${r.race}, ${num(lo)}–${num(hi)} m` : null);
   if (axes) {
     s.removeAttribute('width'); s.removeAttribute('height');
@@ -568,7 +669,7 @@ function profile(r, w, h, axes){
     for (let k = 0; k <= km + 1e-9; k += xstep) el('text', {x:X(k/step), y:h-6, 'text-anchor':'middle'}, ax).textContent = k === 0 ? '0 km' : k;
   }
   const line = e.map((v,i) => `${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join('L');
-  el('path', {class:'prof-area', d:`M${X(0)},${h-m.b}L${line}L${X(n-1)},${h-m.b}Z`}, s);
+  el('path', {class:'prof-area', d:`M${X(0)},${h-m.b}L${line}L${X(n-1).toFixed(1)},${h-m.b}Z`}, s);
   el('path', {class:'prof-line', d:'M'+line}, s);
   return s;
 }
@@ -580,6 +681,11 @@ function routeSvg(r, w, h, label){
 function drawRaces(){
   if (!RACES) return;
   const ul = $('#race-list'); ul.replaceChildren();
+  SCALE = {km: Math.max(...RACES.map(r => (r.profile.elev_m.length-1)*r.profile.step_km)), relief: Math.max(...RACES.map(r => Math.max(...r.profile.elev_m) - Math.min(...r.profile.elev_m)))};
+  const head = document.createElement('li'); head.className = 'head'; head.setAttribute('aria-hidden', 'true');
+  const cols = document.createElement('span'); cols.className = 'cols'; t('cols').forEach(c => { const x = document.createElement('span'); x.textContent = c; cols.appendChild(x); });
+  const exh = document.createElement('span'); exh.textContent = t('colEx');
+  head.append(document.createElement('span'), document.createElement('span'), cols, exh); ul.appendChild(head);
   [...RACES].reverse().forEach(r => {
     const li = document.createElement('li'), b = document.createElement('button');
     b.type = 'button'; b.className = 'race'; b.setAttribute('aria-expanded', OPEN === r.date);
@@ -588,11 +694,14 @@ function drawRaces(){
     const body = document.createElement('span');
     const nm = document.createElement('span'); nm.className = 'nm'; nm.textContent = r.race;
     if (BEST && r.date === BEST.date) { const tg = document.createElement('span'); tg.className = 'best'; tg.textContent = t('best'); nm.appendChild(tg); }
-    const sub = document.createElement('span'); sub.className = 'sub'; sub.textContent = `${r.distance} · ${r.location}`;
-    const res = document.createElement('span'); res.className = 'res'; res.textContent = `${hms(r.official_s)} · ${t('overall')(r.overall)} · ${t('rank')(Math.round(r.ultrasignup_rank))}`;
-    body.append(nm, sub, res);
+    const sub = document.createElement('span'); sub.className = 'sub'; sub.textContent = `${t('dist')(r.distance)} · ${r.location}`;
+    const res = document.createElement('span'); res.className = 'res';
+    /* on wide screens the column heads say "place" and "rank", so the words drop out of the cells */
+    const cell = (...parts) => { const x = document.createElement('span'); parts.forEach(([txt, hideWide]) => { if (!hideWide) return x.append(txt); const i = document.createElement('i'); i.className = 'pre'; i.textContent = txt; x.appendChild(i); }); res.appendChild(x); };
+    cell([hms(r.official_s)]); cell([t('ordn')(r.overall)], [t('ovr'), 1]); cell(['rank ', 1], [Math.round(r.ultrasignup_rank) + '%']);
+    body.append(nm, sub);
     const ex = document.createElement('span'); ex.className = 'ex'; ex.append(profile(r, 160, 44), routeSvg(r, 44, 44));
-    b.append(dt, body, ex);
+    b.append(dt, body, res, ex);
     const det = document.createElement('div'); det.className = 'detail'; det.id = id; det.hidden = OPEN !== r.date;
     b.addEventListener('click', () => { OPEN = OPEN === r.date ? null : r.date; drawRaces(); const nb = document.querySelector(`[aria-controls="${id}"]`); nb && nb.focus(); });
     li.append(b, det); ul.appendChild(li);
@@ -607,10 +716,11 @@ function fillDetail(det, r){
   big.appendChild(profile(r, w, Math.round(Math.min(220, Math.max(150, w*.3))), true));
   rt.appendChild(routeSvg(r, 220, 220, true));
   const dl = document.createElement('dl');
-  [[t('time'), hms(r.official_s)], [t('dist'), `${dec(r.watch_km, 2)} km`], [t('climb'), `${num(r.climb_m)} m`], [t('pace'), pace(r.pace_min_km)], [t('gap'), pace(r.gap_min_km)]].forEach(([k, v]) => {
+  [[t('time'), hms(r.official_s)], [t('dist_'), `${dec(r.watch_km, 2)} km`], [t('climb'), `${num(r.climb_m)} m`], [t('pace'), pace(r.pace_min_km)], [t('gap'), pace(r.gap_min_km)]].forEach(([k, v]) => {
     const d = document.createElement('div'), a = document.createElement('dt'), c = document.createElement('dd'); a.textContent = k; c.textContent = v; d.append(a, c); dl.appendChild(d);
   });
   det.appendChild(dl);
+  if (raceRoute(r)) { const go = document.createElement('button'); go.type = 'button'; go.className = 'textbtn onmap'; go.textContent = t('onMap'); go.addEventListener('click', () => focusRace(r.date)); det.appendChild(go); }
 }
 Promise.all([getJSON('races.json'), getJSON('summary.json')]).then(([r, s]) => { RACES = r; BEST = s.best_race; drawRaces(); }).catch(()=>{});
 
@@ -624,7 +734,8 @@ function drawYears(){
   const max = Math.ceil(Math.max(...YEARS.map(y => y.km)) / 200) * 200;
   const band = Math.max(8, (W - m.l - m.r) / YEARS.length), bw = Math.max(6, Math.min(28, band * .6));
   const X = i => m.l + band*i + band/2, Y = v => m.t + (1 - v/max) * (H - m.t - m.b);
-  const s = svgEl(W, H, t('yearsLabel')); s.removeAttribute('width'); s.removeAttribute('height');
+  const pk0 = YEARS.reduce((a, b) => b.km > a.km ? b : a);
+  const s = svgEl(W, H, t('yearsLabel')(YEARS[0].year, YEARS[YEARS.length-1].year, pk0.year, num(pk0.km))); s.removeAttribute('width'); s.removeAttribute('height');
   const grid = el('g', {class:'grid'}, s), ax = el('g', {class:'axis'}, s);
   for (let v = 0; v <= max; v += 200) { if (v) el('line', {x1:m.l, x2:W-m.r, y1:Y(v), y2:Y(v)}, grid); el('text', {x:m.l-6, y:Y(v)+3, 'text-anchor':'end'}, ax).textContent = v ? num(v) : '0 km'; }
   el('line', {x1:m.l, x2:W-m.r, y1:Y(0), y2:Y(0), class:'base'}, ax);
@@ -676,7 +787,7 @@ function drawWorld(){
   const box = $('#world'); box.replaceChildren();
   const W = box.clientWidth, lat0 = 78, lat1 = -56, H = Math.round(W * (lat0 - lat1) / 360);
   const f = ([la, lo]) => [(lo + 180) / 360 * W, (lat0 - la) / (lat0 - lat1) * H];
-  const s = svgEl(W, H, t('worldLabel')); s.removeAttribute('width'); s.removeAttribute('height');
+  const s = svgEl(W, H, t('worldLabel')(PLACES.length)); s.removeAttribute('width'); s.removeAttribute('height');
   if (LAND) el('path', {class:'land', d: LAND.map(r => pathD(segs(r), f) + 'Z').join('')}, s);
   const mx = Math.max(...PLACES.map(p => p.km)), rmax = Math.max(9, Math.min(18, W/60));
   const tp = tip(box);
@@ -690,7 +801,13 @@ function drawWorld(){
   });
   box.appendChild(s);
   const ul = $('#place-list'); ul.replaceChildren();
-  PLACES.forEach(p => { const li = document.createElement('li'), sp = document.createElement('span'); li.textContent = p.name; sp.textContent = `${num(p.km)} km`; li.appendChild(sp); ul.appendChild(li); });
+  PLACES.forEach((p, i) => { const li = document.createElement('li'), sp = document.createElement('span'); li.textContent = p.name; sp.textContent = `${num(p.km)} km`; li.appendChild(sp); if (i >= 8) li.className = 'more'; ul.appendChild(li); });
+  if (PLACES.open) return;
+  ul.classList.add('short');
+  let more = ul.nextElementSibling;
+  if (!more || !more.classList.contains('plist-more')) { more = document.createElement('button'); more.type = 'button'; more.className = 'textbtn plist-more'; ul.after(more);
+    more.addEventListener('click', () => { PLACES.open = true; ul.classList.remove('short'); more.remove(); }); }
+  more.textContent = t('allPlaces')(PLACES.length);
 }
 getJSON('places.json').then(p => { PLACES = p; drawWorld(); }).catch(()=>{});
 const worldIO = new IntersectionObserver(es => { if (!es.some(e => e.isIntersecting)) return; worldIO.disconnect();
@@ -707,8 +824,7 @@ const ro = new ResizeObserver(es => es.forEach(e => {
   if (e.target.id === 'world') drawWorld();
 }));
 [mapBox, $('#race-list'), $('#year-chart'), $('#world')].forEach(x => ro.observe(x));
-new MutationObserver(() => { if (M.trails) { placeChips(); drawMap(); } drawRaces(); drawYears(); drawWorld();
-  getJSON('summary.json').then(s => document.querySelectorAll('[data-stat]').forEach(b => b.textContent = num(s[b.dataset.stat]))).catch(()=>{});
+new MutationObserver(() => { if (M.trails) { placeChips(); drawMap(); } drawRaces(); drawYears(); drawWorld(); fillVars();
 }).observe(document.documentElement, {attributes:true, attributeFilter:['lang']});
 })();
 </script>
