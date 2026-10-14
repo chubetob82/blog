@@ -193,6 +193,13 @@ header.hero{padding:clamp(44px,7vw,80px) 0 40px;border-bottom:1px solid var(--ru
 .awards{list-style:none;margin:0;padding:0;font-size:.92rem}
 .awards li{padding:7px 0;border-bottom:1px solid var(--rule);color:var(--ink-2);display:flex;justify-content:space-between;gap:16px}
 .awards li span{font-family:var(--font-mono);font-size:.74rem;color:var(--muted);white-space:nowrap}
+/* the running page, from Out of office: an extension of the tags above it, not a new card */
+.run-strip{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px;align-items:center;margin:18px 0 0;padding:10px;border:1px solid var(--rule);background:var(--panel);text-decoration:none;color:var(--ink)}
+.run-strip img{display:block;width:72px;height:72px;border:1px solid var(--rule)}
+.run-strip > span{display:flex;flex-direction:column;gap:3px}
+.run-strip .n{font-family:var(--font-mono);font-size:.78rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.run-strip .go{font-family:var(--font-mono);font-size:.78rem;color:var(--parallel)}
+.run-strip:hover,.run-strip:focus-visible{border-color:var(--parallel)}
 .oo-shot{margin:18px 0 0}
 .oo-shot img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--rule)}
 .oo-shot figcaption{font-family:var(--font-mono);font-size:.72rem;line-height:1.5;color:var(--muted);margin-top:8px}
@@ -213,6 +220,7 @@ header.hero{padding:clamp(44px,7vw,80px) 0 40px;border-bottom:1px solid var(--ru
       <a class="primary" href="#contact">Contact</a>
       <a href="https://www.linkedin.com/in/bolivarj/">LinkedIn</a>
       <a href="/blog/">Read the blog</a>
+      <a href="/running/" data-run-link="hero">Running</a>
     </div>
   </div>
   <div class="shot"><figure>
@@ -317,6 +325,19 @@ header.hero{padding:clamp(44px,7vw,80px) 0 40px;border-bottom:1px solid var(--ru
 </section>
 
 <section>
+  <div class="sec-head"><span class="eyebrow">Off the clock</span><h2>Running</h2></div>
+  <div class="piece">
+    <div class="body">
+      <span class="eyebrow">Running · since 2011</span>
+      <h3><a href="/running/" data-run-link="section">Mostly trails</a></h3>
+      <p>950 runs and 5,641 km, from Boston to Bryce Canyon. Trail routes since 2022, ten trail races, fifteen years by the numbers.</p>
+      <p class="langs"><a href="/running/" data-run-link="section">See the trails →</a></p>
+    </div>
+    <div class="shot"><img src="/assets/og-running.jpg" width="1200" height="630" loading="lazy" decoding="async" alt="Trail routes in the East Bay hills drawn as thin overlapping lines, with race routes in amber."></div>
+  </div>
+</section>
+
+<section>
   <div class="sec-head"><span class="eyebrow">Detail</span><h2>Training, skills, and the rest</h2></div>
   <div class="two">
     <div>
@@ -348,6 +369,10 @@ header.hero{padding:clamp(44px,7vw,80px) 0 40px;border-bottom:1px solid var(--ru
         <li><a href="/running/">Ultrarunning</a></li><li>Snow sports</li><li>Hiking</li><li>Drone photography</li>
         <li>Flying drones and planes</li><li>Podcasting</li><li>Video and sound production</li>
       </ul>
+      <a class="run-strip" href="/running/" data-run-link="ooo">
+        <img src="/assets/run-thumb.png" width="72" height="72" loading="lazy" decoding="async" alt="">
+        <span><span class="eyebrow">Running · since 2011</span><span class="n">950 runs · 5,641 km · 10 races</span><span class="go">Mostly trails →</span></span>
+      </a>
       <figure class="oo-shot">
         <img src="/assets/roraima.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Standing on the bare rock summit plateau of a tepui, walking pole in hand, with cloud spilling over the escarpment behind.">
         <figcaption>On top of Roraima.</figcaption>
